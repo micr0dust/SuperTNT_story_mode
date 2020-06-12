@@ -209,8 +209,8 @@
 
 		</div>
 		<a id="gamePlayBtn" class="gamePlayBtn"><img src="./images/4YtokZ.png" alt=""></a>
-		<h1 id="reload_back" class="reload_back0">重載網頁以重置遊戲</h1>
-		<h1 id="reload" class="reload0">重載網頁以重置遊戲</h1>
+		<h1 id="reload_back" class="reload_back0">按任意鍵重置遊戲</h1>
+		<h1 id="reload" class="reload0">按任意鍵重置遊戲</h1>
 		<div id="animation_container" style="background-color:rgba(255, 204, 153, 1.00); width:640px; height:480px">
 			<canvas id="canvas" width="640" height="480"
 				style="position: absolute; display: block; background-color:rgba(255, 204, 153, 1.00);"></canvas>
@@ -229,13 +229,15 @@
 					|| navigator.userAgent.match(/BlackBerry/i)
 					|| navigator.userAgent.match(/Windows Phone/i)
 				) {
+					if (window.DeviceOrientationEvent) {
+						alert("請轉為橫屏!");
+					}
 					return true;
 				}
 				else {
 					return false;
 				}
 			}
-			console.log(detectmob())
 			if (!detectmob()) {
 				document.querySelector(".ctrl").style.display = 'none';
 			}

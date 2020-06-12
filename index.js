@@ -162,7 +162,8 @@ function handleComplete(evt, comp) {
 			udlr = true;
 			step = STEP * -1;
 			isKeyDown = true;
-			robot.gotoAndPlay("left");
+			direction = "left";
+			robot.gotoAndPlay(direction);
 			if (player1_x === 1) return;
 			if (wall((player1_x - 1) * 100 + (player1_y))) return box(location);
 			moveFn();
@@ -170,7 +171,8 @@ function handleComplete(evt, comp) {
 			udlr = false;
 			step = STEP * -1;
 			isKeyDown = true;
-			robot.gotoAndPlay("up");
+			direction = "up";
+			robot.gotoAndPlay(direction);
 			if (player1_y === 1) return;
 			if (wall((player1_x) * 100 + (player1_y - 1))) return box(location);
 			moveFn();
@@ -178,7 +180,8 @@ function handleComplete(evt, comp) {
 			udlr = true;
 			step = STEP;
 			isKeyDown = true;
-			robot.gotoAndPlay("right");
+			direction = "right";
+			robot.gotoAndPlay(direction);
 			if (player1_x === 12) return;
 			if (wall((player1_x + 1) * 100 + (player1_y))) return box(location);
 			moveFn();
@@ -186,7 +189,8 @@ function handleComplete(evt, comp) {
 			udlr = false;
 			step = STEP;
 			isKeyDown = true;
-			robot.gotoAndPlay("down");
+			direction = "down";
+			robot.gotoAndPlay(direction);
 			if (player1_y === 12) return;
 			if (wall((player1_x) * 100 + (player1_y + 1))) return box(location);
 			moveFn();
