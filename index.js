@@ -47,9 +47,7 @@ function handleComplete(evt, comp) {
 	let chatbar_status = true;
 	let speaking = true;
 	let speaker = "自己";
-	let line_1;
-	let line_2;
-	let line_3; chats
+	let line_1, line_2, line_3;
 	let location;
 
 	let chatbar = new lib.chat_bar();
@@ -80,9 +78,30 @@ function handleComplete(evt, comp) {
 	var player1_y = 5;
 	summon(robot, player1_x * 50 - 25, player1_y * 50 - 25, direction, true);
 
+	var hitArea = new createjs.Shape();
+	hitArea.graphics.beginFill("#000").drawRect(0, 0, 50, 50);//這裡是圖片大小
 	//items
 	var library_key = new lib.item();
-	summon(library_key, 1, 1, "key", false);
+	item_summon(library_key, 1, 1, "key", true);
+	library_key.addEventListener('click', function () { alert("我是鑰匙") })
+	var cd = new lib.item();
+	item_summon(cd, 2, 1, "cd", true);
+	cd.addEventListener('click', function () { alert("我是CD") })
+	var paper1 = new lib.item();
+	item_summon(paper1, 3, 1, "paper", true);
+	var paper2 = new lib.item();
+	item_summon(paper2, 4, 1, "paper", true);
+	var paper3 = new lib.item();
+	item_summon(paper3, 1, 2, "paper", true);
+
+	var knife = new lib.item();
+	item_summon(knife, 1, 6, "knife", true);
+	var paper3 = new lib.item();
+	item_summon(paper3, 2, 6, "jimmy_bar", true);
+
+	console.log(library_key)
+
+	//item
 
 	//events
 	let library_ghost = true;
@@ -128,14 +147,14 @@ function handleComplete(evt, comp) {
 		} else if (map === 2) {
 			blocks[101] = "soul_sand"; blocks[102] = "soul_sand"; blocks[103] = "dark_prismarine"; blocks[104] = "dark_prismarine"; blocks[107] = "dark_prismarine"; blocks[108] = "soul_sand"; blocks[109] = "soul_sand"; blocks[110] = "soul_sand"; blocks[111] = "soul_sand"; blocks[112] = "soul_sand"; blocks[201] = "soul_sand"; blocks[202] = "soul_sand"; blocks[203] = "dark_prismarine"; blocks[207] = "dark_prismarine"; blocks[208] = "soul_sand"; blocks[209] = "soul_sand"; blocks[210] = "soul_sand"; blocks[211] = "soul_sand"; blocks[212] = "soul_sand"; blocks[301] = "soul_sand"; blocks[302] = "dark_prismarine"; blocks[307] = "dark_prismarine"; blocks[308] = "soul_sand"; blocks[309] = "soul_sand"; blocks[310] = "soul_sand"; blocks[311] = "soul_sand"; blocks[312] = "soul_sand"; blocks[401] = "dark_prismarine"; blocks[406] = "dark_prismarine"; blocks[407] = "soul_sand"; blocks[408] = "soul_sand"; blocks[409] = "soul_sand"; blocks[410] = "soul_sand"; blocks[411] = "soul_sand"; blocks[412] = "soul_sand"; blocks[501] = "dark_prismarine"; blocks[505] = "dark_prismarine"; blocks[506] = "soul_sand"; blocks[507] = "soul_sand"; blocks[508] = "soul_sand"; blocks[509] = "soul_sand"; blocks[510] = "dark_prismarine"; blocks[511] = "dark_prismarine"; blocks[512] = "dark_prismarine"; blocks[601] = "dark_prismarine"; blocks[605] = "dark_prismarine"; blocks[606] = "soul_sand"; blocks[607] = "soul_sand"; blocks[608] = "soul_sand"; blocks[609] = "dark_prismarine"; blocks[701] = "soul_sand"; blocks[702] = "dark_prismarine"; blocks[706] = "dark_prismarine"; blocks[707] = "soul_sand"; blocks[708] = "dark_prismarine"; blocks[712] = "dark_prismarine"; blocks[801] = "soul_sand"; blocks[802] = "dark_prismarine"; blocks[807] = "dark_prismarine"; blocks[811] = "dark_prismarine"; blocks[812] = "soul_sand"; blocks[901] = "soul_sand"; blocks[902] = "soul_sand"; blocks[903] = "dark_prismarine"; blocks[909] = "dark_prismarine"; blocks[910] = "dark_prismarine"; blocks[911] = "soul_sand"; blocks[912] = "soul_sand"; blocks[1001] = "soul_sand"; blocks[1002] = "soul_sand"; blocks[1003] = "soul_sand"; blocks[1004] = "dark_prismarine"; blocks[1008] = "dark_prismarine"; blocks[1009] = "soul_sand"; blocks[1010] = "soul_sand"; blocks[1011] = "soul_sand"; blocks[1012] = "soul_sand"; blocks[1101] = "soul_sand"; blocks[1102] = "soul_sand"; blocks[1103] = "soul_sand"; blocks[1104] = "soul_sand"; blocks[1105] = "dark_prismarine"; blocks[1106] = "dark_prismarine"; blocks[1107] = "dark_prismarine"; blocks[1108] = "soul_sand"; blocks[1109] = "soul_sand"; blocks[1110] = "soul_sand"; blocks[1111] = "soul_sand"; blocks[1112] = "soul_sand"; blocks[1201] = "soul_sand"; blocks[1202] = "soul_sand"; blocks[1203] = "soul_sand"; blocks[1204] = "soul_sand"; blocks[1205] = "soul_sand"; blocks[1206] = "soul_sand"; blocks[1207] = "soul_sand"; blocks[1208] = "soul_sand"; blocks[1209] = "soul_sand"; blocks[1210] = "soul_sand"; blocks[1211] = "soul_sand"; blocks[1212] = "soul_sand";
 			floor("podzol");
-			events[613] = { "map": 1, "x": 6, "y": 2 };
+			events[613] = { "map": 1, "x": 6, "y": 3 };
 			events[5] = { "map": 3, "x": 13, "y": 5 };
 			events[6] = { "map": 3, "x": 13, "y": 6 };
 		} else if (map === 3) {
 			blocks[101] = "dark_prismarine"; blocks[105] = "dark_prismarine"; blocks[106] = "soul_sand"; blocks[107] = "soul_sand"; blocks[108] = "soul_sand"; blocks[109] = "soul_sand"; blocks[110] = "dark_prismarine"; blocks[201] = "soul_sand"; blocks[202] = "dark_prismarine"; blocks[205] = "dark_prismarine"; blocks[206] = "soul_sand"; blocks[207] = "soul_sand"; blocks[208] = "soul_sand"; blocks[209] = "dark_prismarine"; blocks[301] = "soul_sand"; blocks[302] = "dark_prismarine"; blocks[305] = "dark_prismarine"; blocks[306] = "soul_sand"; blocks[307] = "soul_sand"; blocks[308] = "dark_prismarine"; blocks[312] = "dark_prismarine"; blocks[401] = "soul_sand"; blocks[402] = "dark_prismarine"; blocks[406] = "dark_prismarine"; blocks[407] = "dark_prismarine"; blocks[411] = "dark_prismarine"; blocks[412] = "soul_sand"; blocks[501] = "soul_sand"; blocks[502] = "dark_prismarine"; blocks[506] = "dark_prismarine"; blocks[510] = "dark_prismarine"; blocks[511] = "soul_sand"; blocks[512] = "soul_sand"; blocks[601] = "soul_sand"; blocks[602] = "soul_sand"; blocks[603] = "dark_prismarine"; blocks[609] = "dark_prismarine"; blocks[610] = "soul_sand"; blocks[611] = "soul_sand"; blocks[612] = "soul_sand"; blocks[701] = "soul_sand"; blocks[702] = "soul_sand"; blocks[703] = "dark_prismarine"; blocks[708] = "dark_prismarine"; blocks[709] = "soul_sand"; blocks[710] = "soul_sand"; blocks[711] = "soul_sand"; blocks[712] = "soul_sand"; blocks[801] = "soul_sand"; blocks[802] = "soul_sand"; blocks[803] = "dark_prismarine"; blocks[807] = "dark_prismarine"; blocks[808] = "soul_sand"; blocks[809] = "soul_sand"; blocks[810] = "soul_sand"; blocks[811] = "soul_sand"; blocks[812] = "soul_sand"; blocks[901] = "soul_sand"; blocks[902] = "soul_sand"; blocks[903] = "soul_sand"; blocks[904] = "dark_prismarine"; blocks[907] = "dark_prismarine"; blocks[908] = "soul_sand"; blocks[909] = "soul_sand"; blocks[910] = "soul_sand"; blocks[911] = "soul_sand"; blocks[912] = "soul_sand"; blocks[1001] = "soul_sand"; blocks[1002] = "soul_sand"; blocks[1003] = "soul_sand"; blocks[1004] = "dark_prismarine"; blocks[1007] = "dark_prismarine"; blocks[1008] = "soul_sand"; blocks[1009] = "soul_sand"; blocks[1010] = "soul_sand"; blocks[1011] = "soul_sand"; blocks[1012] = "soul_sand"; blocks[1101] = "soul_sand"; blocks[1102] = "soul_sand"; blocks[1103] = "soul_sand"; blocks[1104] = "dark_prismarine"; blocks[1107] = "dark_prismarine"; blocks[1108] = "soul_sand"; blocks[1109] = "soul_sand"; blocks[1110] = "soul_sand"; blocks[1111] = "soul_sand"; blocks[1112] = "soul_sand"; blocks[1201] = "soul_sand"; blocks[1202] = "soul_sand"; blocks[1203] = "soul_sand"; blocks[1204] = "dark_prismarine"; blocks[1207] = "dark_prismarine"; blocks[1208] = "soul_sand"; blocks[1209] = "soul_sand"; blocks[1210] = "soul_sand"; blocks[1211] = "soul_sand"; blocks[1212] = "soul_sand";
 			floor("podzol");
-			events[1305] = { "map": 2, "x": 0, "y": 5 };
-			events[1306] = { "map": 2, "x": 0, "y": 6 };
+			events[1305] = { "map": 2, "x": 1, "y": 5 };
+			events[1306] = { "map": 2, "x": 1, "y": 6 };
 			events[2] = { "map": 4, "x": 13, "y": 2 };
 			events[3] = { "map": 4, "x": 13, "y": 3 };
 			events[4] = { "map": 4, "x": 13, "y": 4 };
@@ -143,27 +162,27 @@ function handleComplete(evt, comp) {
 			blocks[101] = "cobweb"; blocks[102] = "spruce_planks"; blocks[103] = "spruce_planks"; blocks[104] = "spruce_planks"; blocks[105] = "spruce_planks"; blocks[106] = "spruce_planks"; blocks[107] = "spruce_planks"; blocks[108] = "spruce_planks"; blocks[109] = "ladder"; blocks[110] = "ladder"; blocks[112] = "cobweb"; blocks[202] = "spruce_planks"; blocks[203] = "spruce_planks"; blocks[204] = "spruce_planks"; blocks[205] = "spruce_planks"; blocks[206] = "spruce_planks"; blocks[207] = "spruce_planks"; blocks[208] = "spruce_planks"; blocks[209] = "dark_oak_planks"; blocks[210] = "dark_oak_planks"; blocks[301] = "cobweb"; blocks[302] = "spruce_planks"; blocks[303] = "spruce_planks"; blocks[304] = "spruce_planks"; blocks[305] = "spruce_planks"; blocks[306] = "spruce_planks"; blocks[307] = "spruce_planks"; blocks[308] = "spruce_planks"; blocks[309] = "dark_oak_planks"; blocks[310] = "dark_oak_planks"; blocks[312] = "cobweb"; blocks[402] = "spruce_planks"; blocks[403] = "spruce_planks"; blocks[404] = "spruce_planks"; blocks[405] = "spruce_planks"; blocks[406] = "spruce_planks"; blocks[407] = "spruce_planks"; blocks[408] = "spruce_planks"; blocks[409] = "dark_oak_planks"; blocks[410] = "dark_oak_planks"; blocks[502] = "spruce_planks"; blocks[503] = "spruce_planks"; blocks[504] = "spruce_planks"; blocks[505] = "spruce_planks"; blocks[506] = "spruce_planks"; blocks[507] = "spruce_planks"; blocks[508] = "spruce_planks"; blocks[509] = "dark_oak_planks"; blocks[510] = "dark_oak_planks"; blocks[511] = "cobweb"; blocks[602] = "spruce_planks"; blocks[603] = "spruce_planks"; blocks[604] = "oak_door"; blocks[605] = "spruce_planks"; blocks[606] = "spruce_planks"; blocks[607] = "spruce_planks"; blocks[608] = "spruce_planks"; blocks[609] = "dark_oak_planks"; blocks[610] = "dark_oak_planks"; blocks[706] = "cobweb"; blocks[707] = "cobweb"; blocks[709] = "cobweb"; blocks[811] = "cobweb"; blocks[812] = "dark_prismarine"; blocks[901] = "cobweb"; blocks[903] = "cobweb"; blocks[908] = "cobweb"; blocks[911] = "dark_prismarine"; blocks[912] = "soul_sand"; blocks[1001] = "dark_prismarine"; blocks[1002] = "iron_bars"; blocks[1006] = "dark_prismarine"; blocks[1007] = "dark_prismarine"; blocks[1008] = "dark_prismarine"; blocks[1009] = "dark_prismarine"; blocks[1010] = "dark_prismarine"; blocks[1011] = "soul_sand"; blocks[1012] = "soul_sand"; blocks[1101] = "dark_prismarine"; blocks[1104] = "iron_bars"; blocks[1105] = "dark_prismarine"; blocks[1106] = "soul_sand"; blocks[1107] = "soul_sand"; blocks[1108] = "soul_sand"; blocks[1109] = "soul_sand"; blocks[1110] = "soul_sand"; blocks[1111] = "soul_sand"; blocks[1112] = "soul_sand"; blocks[1201] = "dark_prismarine"; blocks[1205] = "dark_prismarine"; blocks[1206] = "soul_sand"; blocks[1207] = "soul_sand"; blocks[1208] = "soul_sand"; blocks[1209] = "soul_sand"; blocks[1210] = "soul_sand"; blocks[1211] = "soul_sand"; blocks[1212] = "soul_sand";
 			floor("podzol");
 			layer2[109] = "dark_oak_planks"; layer2[110] = "dark_oak_planks";
-			events[1302] = { "map": 3, "x": 0, "y": 2 };
-			events[1303] = { "map": 3, "x": 0, "y": 3 };
-			events[1304] = { "map": 3, "x": 0, "y": 4 };
-			events[604] = { "map": 5, "x": 12, "y": 7 };
+			events[1302] = { "map": 3, "x": 1, "y": 2 };
+			events[1303] = { "map": 3, "x": 1, "y": 3 };
+			events[1304] = { "map": 3, "x": 1, "y": 4 };
+			events[604] = { "map": 5, "x": 11, "y": 7 };
 		} else if (map === 5) {
 			blocks[101] = "spruce_planks"; blocks[102] = "spruce_planks"; blocks[103] = "spruce_planks"; blocks[104] = "spruce_planks"; blocks[105] = "spruce_planks"; blocks[106] = "spruce_planks"; blocks[107] = "oak_door"; blocks[108] = "spruce_planks"; blocks[109] = "spruce_planks"; blocks[110] = "frosted_ice"; blocks[111] = "frosted_ice"; blocks[112] = "spruce_planks"; blocks[201] = "bookshelf"; blocks[202] = "beehive"; blocks[204] = "cartography_table"; blocks[205] = "spruce_planks"; blocks[206] = "spruce_planks"; blocks[208] = "spruce_planks"; blocks[209] = "spruce_planks"; blocks[210] = "cauldron"; blocks[211] = "cauldron"; blocks[212] = "spruce_planks"; blocks[301] = "bookshelf"; blocks[302] = "beehive"; blocks[304] = "scaffolding"; blocks[305] = "spruce_planks"; blocks[306] = "spruce_planks"; blocks[308] = "spruce_planks"; blocks[309] = "spruce_planks"; blocks[312] = "spruce_planks"; blocks[401] = "bookshelf"; blocks[402] = "beehive"; blocks[406] = "dark_oak_door"; blocks[408] = "dark_oak_door"; blocks[412] = "spruce_planks"; blocks[501] = "bookshelf"; blocks[502] = "loom"; blocks[504] = "brewing_stand"; blocks[505] = "spruce_planks"; blocks[506] = "spruce_planks"; blocks[508] = "spruce_planks"; blocks[509] = "spruce_planks"; blocks[510] = "acacia_door"; blocks[511] = "acacia_door"; blocks[512] = "spruce_planks"; blocks[601] = "spruce_planks"; blocks[602] = "spruce_planks"; blocks[603] = "spruce_planks"; blocks[604] = "spruce_planks"; blocks[605] = "spruce_planks"; blocks[606] = "spruce_planks"; blocks[608] = "spruce_planks"; blocks[609] = "spruce_planks"; blocks[610] = "barrel"; blocks[611] = "barrel_open"; blocks[612] = "spruce_planks"; blocks[701] = "spruce_planks"; blocks[702] = "spruce_planks"; blocks[703] = "spruce_planks"; blocks[704] = "spruce_planks"; blocks[705] = "spruce_planks"; blocks[706] = "spruce_planks"; blocks[708] = "spruce_planks"; blocks[709] = "spruce_planks"; blocks[710] = "ice"; blocks[711] = "frosted_ice"; blocks[712] = "spruce_planks"; blocks[801] = "bookshelf"; blocks[802] = "bookshelf"; blocks[803] = "bookshelf"; blocks[804] = "bookshelf"; blocks[805] = "spruce_planks"; blocks[806] = "spruce_planks"; blocks[808] = "spruce_planks"; blocks[809] = "spruce_planks"; blocks[810] = "cauldron"; blocks[811] = "cauldron"; blocks[812] = "spruce_planks"; blocks[901] = "bookshelf"; blocks[905] = "spruce_planks"; blocks[906] = "spruce_planks"; blocks[908] = "spruce_planks"; blocks[909] = "spruce_planks"; blocks[912] = "spruce_planks"; blocks[1001] = "bookshelf"; blocks[1003] = "enchanting_table"; blocks[1006] = "dark_oak_door"; blocks[1008] = "dark_oak_door"; blocks[1012] = "spruce_planks"; blocks[1101] = "bookshelf"; blocks[1105] = "spruce_planks"; blocks[1106] = "spruce_planks"; blocks[1108] = "spruce_planks"; blocks[1109] = "spruce_planks"; blocks[1110] = "acacia_door"; blocks[1111] = "acacia_door"; blocks[1112] = "spruce_planks"; blocks[1201] = "spruce_planks"; blocks[1202] = "spruce_planks"; blocks[1203] = "spruce_planks"; blocks[1204] = "spruce_planks"; blocks[1205] = "spruce_planks"; blocks[1206] = "spruce_planks"; blocks[1207] = "oak_door"; blocks[1208] = "spruce_planks"; blocks[1209] = "spruce_planks"; blocks[1210] = "barrel"; blocks[1211] = "barrel"; blocks[1212] = "spruce_planks";
 			floor("oak_planks");
 			layer2[107] = "black_wool"; layer2[409] = "pink_wool"; layer2[510] = "pink_wool"; layer2[511] = "pink_wool"; layer2[1009] = "light_blue_wool"; layer2[1110] = "light_blue_wool"; layer2[1111] = "light_blue_wool";
-			events[1207] = { "map": 4, "x": 6, "y": 4 };
-			events[107] = { "map": 6, "x": 12, "y": 7 };
+			events[1207] = { "map": 4, "x": 7, "y": 4 };
+			events[107] = { "map": 6, "x": 11, "y": 7 };
 		} else if (map === 6) {
 			blocks[101] = "spruce_planks"; blocks[102] = "spruce_planks"; blocks[103] = "spruce_planks"; blocks[104] = "spruce_planks"; blocks[105] = "spruce_planks"; blocks[106] = "spruce_planks"; blocks[107] = "iron_door"; blocks[108] = "spruce_planks"; blocks[109] = "spruce_planks"; blocks[110] = "spruce_planks"; blocks[111] = "spruce_planks"; blocks[112] = "spruce_planks"; blocks[201] = "ladder"; blocks[202] = "ladder"; blocks[210] = "bookshelf"; blocks[211] = "spruce_planks"; blocks[212] = "spruce_planks"; blocks[301] = "spruce_planks"; blocks[302] = "bookshelf"; blocks[304] = "bookshelf"; blocks[306] = "bookshelf"; blocks[308] = "bookshelf"; blocks[310] = "bookshelf"; blocks[311] = "spruce_planks"; blocks[312] = "spruce_planks"; blocks[401] = "spruce_planks"; blocks[402] = "bookshelf"; blocks[404] = "bookshelf"; blocks[406] = "bookshelf"; blocks[408] = "bookshelf"; blocks[410] = "bookshelf"; blocks[411] = "spruce_planks"; blocks[412] = "spruce_planks"; blocks[501] = "spruce_planks"; blocks[502] = "bookshelf"; blocks[504] = "bookshelf"; blocks[506] = "bookshelf"; blocks[508] = "bookshelf"; blocks[510] = "bookshelf"; blocks[511] = "spruce_planks"; blocks[512] = "spruce_planks"; blocks[601] = "spruce_planks"; blocks[602] = "bookshelf"; blocks[604] = "bookshelf"; blocks[606] = "bookshelf"; blocks[608] = "bookshelf"; blocks[610] = "bookshelf"; blocks[611] = "spruce_planks"; blocks[612] = "spruce_planks"; blocks[701] = "spruce_planks"; blocks[702] = "bookshelf"; blocks[704] = "bookshelf"; blocks[706] = "bookshelf"; blocks[708] = "bookshelf"; blocks[710] = "bookshelf"; blocks[711] = "spruce_planks"; blocks[712] = "spruce_planks"; blocks[801] = "spruce_planks"; blocks[802] = "bookshelf"; blocks[804] = "bookshelf"; blocks[806] = "bookshelf"; blocks[808] = "bookshelf"; blocks[810] = "bookshelf"; blocks[811] = "spruce_planks"; blocks[812] = "spruce_planks"; blocks[901] = "spruce_planks"; blocks[902] = "bookshelf"; blocks[904] = "bookshelf"; blocks[906] = "bookshelf"; blocks[908] = "bookshelf"; blocks[910] = "bookshelf"; blocks[911] = "spruce_planks"; blocks[912] = "spruce_planks"; blocks[1001] = "spruce_planks"; blocks[1002] = "bookshelf"; blocks[1004] = "bookshelf"; blocks[1006] = "bookshelf"; blocks[1008] = "bookshelf"; blocks[1010] = "bookshelf"; blocks[1011] = "spruce_planks"; blocks[1012] = "spruce_planks"; blocks[1101] = "spruce_planks"; blocks[1102] = "bookshelf"; blocks[1110] = "bookshelf"; blocks[1111] = "spruce_planks"; blocks[1112] = "spruce_planks"; blocks[1201] = "spruce_planks"; blocks[1202] = "spruce_planks"; blocks[1203] = "spruce_planks"; blocks[1204] = "spruce_planks"; blocks[1205] = "spruce_planks"; blocks[1206] = "spruce_planks"; blocks[1207] = "oak_door"; blocks[1208] = "spruce_planks"; blocks[1209] = "spruce_planks"; blocks[1210] = "spruce_planks"; blocks[1211] = "spruce_planks"; blocks[1212] = "spruce_planks";
 			floor("oak_planks");
 			layer2[107] = "black_wool"; layer2[201] = "spruce_planks"; layer2[202] = "bookshelf"; layer2[206] = "cobweb"; layer2[211] = "cobweb"; layer2[303] = "cobweb"; layer2[305] = "cobweb"; layer2[309] = "cobweb"; layer2[603] = "cobweb"; layer2[607] = "cobweb"; layer2[703] = "cobweb"; layer2[705] = "cobweb"; layer2[809] = "cobweb"; layer2[811] = "cobweb"; layer2[911] = "cobweb"; layer2[1009] = "cobweb"; layer2[1011] = "cobweb"; layer2[1103] = "cobweb"; layer2[1110] = "cobweb"; layer2[1111] = "cobweb";
-			events[1207] = { "map": 5, "x": 1, "y": 7 };
-			events[202] = { "map": 7, "x": 2, "y": 3 };
+			events[1207] = { "map": 5, "x": 2, "y": 7 };
+			events[202] = { "map": 7, "x": 2, "y": 3, "way": "down" };
 		} else if (map === 7) {
 			blocks[101] = "bookshelf"; blocks[102] = "bookshelf"; blocks[103] = "bookshelf"; blocks[104] = "bookshelf"; blocks[105] = "bookshelf"; blocks[106] = "bookshelf"; blocks[107] = "bookshelf"; blocks[108] = "bookshelf"; blocks[109] = "bookshelf"; blocks[110] = "bookshelf"; blocks[111] = "bookshelf"; blocks[112] = "bookshelf"; blocks[201] = "ladder"; blocks[212] = "bookshelf"; blocks[301] = "bookshelf"; blocks[303] = "piston"; blocks[304] = "piston"; blocks[305] = "piston"; blocks[306] = "piston"; blocks[307] = "piston"; blocks[308] = "piston"; blocks[309] = "piston"; blocks[310] = "piston"; blocks[312] = "bookshelf"; blocks[401] = "bookshelf"; blocks[403] = "piston"; blocks[404] = "bookshelf"; blocks[406] = "bookshelf"; blocks[408] = "bookshelf"; blocks[410] = "piston"; blocks[412] = "bookshelf"; blocks[501] = "bookshelf"; blocks[503] = "piston"; blocks[504] = "bookshelf"; blocks[506] = "bookshelf"; blocks[508] = "bookshelf"; blocks[510] = "piston"; blocks[512] = "bookshelf"; blocks[601] = "bookshelf"; blocks[603] = "piston"; blocks[604] = "bookshelf"; blocks[606] = "bookshelf"; blocks[607] = "cobweb"; blocks[608] = "bookshelf"; blocks[610] = "piston"; blocks[612] = "bookshelf"; blocks[701] = "bookshelf"; blocks[703] = "piston"; blocks[704] = "bookshelf"; blocks[705] = "cobweb"; blocks[706] = "bookshelf"; blocks[708] = "bookshelf"; blocks[710] = "piston"; blocks[712] = "bookshelf"; blocks[801] = "bookshelf"; blocks[803] = "piston"; blocks[804] = "bookshelf"; blocks[806] = "bookshelf"; blocks[808] = "bookshelf"; blocks[809] = "cobweb"; blocks[810] = "piston"; blocks[812] = "bookshelf"; blocks[901] = "bookshelf"; blocks[903] = "piston"; blocks[904] = "bookshelf"; blocks[906] = "bookshelf"; blocks[908] = "bookshelf"; blocks[910] = "piston"; blocks[912] = "bookshelf"; blocks[1001] = "bookshelf"; blocks[1003] = "piston"; blocks[1004] = "piston"; blocks[1005] = "piston"; blocks[1006] = "piston"; blocks[1007] = "piston"; blocks[1008] = "piston"; blocks[1009] = "piston"; blocks[1010] = "piston"; blocks[1012] = "bookshelf"; blocks[1101] = "bookshelf"; blocks[1112] = "bookshelf"; blocks[1201] = "bookshelf"; blocks[1202] = "bookshelf"; blocks[1203] = "bookshelf"; blocks[1204] = "bookshelf"; blocks[1205] = "bookshelf"; blocks[1206] = "enchanting_table"; blocks[1207] = "bookshelf"; blocks[1208] = "bookshelf"; blocks[1209] = "bookshelf"; blocks[1210] = "bookshelf"; blocks[1211] = "bookshelf"; blocks[1212] = "bookshelf";
 			floor("oak_planks");
 			layer2[201] = "spruce_planks"; layer2[405] = "spruce_planks"; layer2[407] = "spruce_planks"; layer2[409] = "spruce_planks"; layer2[505] = "spruce_planks"; layer2[507] = "spruce_planks"; layer2[509] = "spruce_planks"; layer2[605] = "spruce_planks"; layer2[607] = "spruce_planks"; layer2[609] = "spruce_planks"; layer2[705] = "spruce_planks"; layer2[707] = "spruce_planks"; layer2[709] = "spruce_planks"; layer2[805] = "spruce_planks"; layer2[807] = "spruce_planks"; layer2[809] = "spruce_planks"; layer2[905] = "spruce_planks"; layer2[907] = "spruce_planks"; layer2[909] = "spruce_planks";
-			events[201] = { "map": 6, "x": 2, "y": 4 };
+			events[201] = { "map": 6, "x": 2, "y": 3, "way": "down" };
 			events[1207] = { "item": library_key };
 		} else if (map === 8) {
 			blocks[101] = "bookshelf"; blocks[102] = "bookshelf"; blocks[103] = "bookshelf"; blocks[104] = "bookshelf"; blocks[105] = "bookshelf"; blocks[106] = "bookshelf"; blocks[107] = "bookshelf"; blocks[108] = "bookshelf"; blocks[109] = "bookshelf"; blocks[110] = "bookshelf"; blocks[111] = "bookshelf"; blocks[112] = "bookshelf"; blocks[201] = "ladder"; blocks[212] = "bookshelf"; blocks[301] = "bookshelf"; blocks[303] = "piston"; blocks[304] = "piston"; blocks[305] = "piston"; blocks[306] = "piston"; blocks[307] = "piston"; blocks[308] = "piston"; blocks[309] = "piston"; blocks[310] = "piston"; blocks[312] = "bookshelf"; blocks[401] = "bookshelf"; blocks[403] = "piston"; blocks[404] = "bookshelf"; blocks[406] = "bookshelf"; blocks[408] = "bookshelf"; blocks[410] = "piston"; blocks[412] = "bookshelf"; blocks[501] = "bookshelf"; blocks[503] = "piston"; blocks[504] = "bookshelf"; blocks[506] = "bookshelf"; blocks[508] = "bookshelf"; blocks[510] = "piston"; blocks[512] = "bookshelf"; blocks[601] = "bookshelf"; blocks[603] = "piston"; blocks[604] = "bookshelf"; blocks[606] = "bookshelf"; blocks[607] = "cobweb"; blocks[608] = "bookshelf"; blocks[610] = "piston"; blocks[612] = "bookshelf"; blocks[701] = "bookshelf"; blocks[703] = "piston"; blocks[704] = "bookshelf"; blocks[705] = "cobweb"; blocks[706] = "bookshelf"; blocks[708] = "bookshelf"; blocks[710] = "piston"; blocks[712] = "bookshelf"; blocks[801] = "bookshelf"; blocks[803] = "piston"; blocks[804] = "bookshelf"; blocks[806] = "bookshelf"; blocks[808] = "bookshelf"; blocks[809] = "cobweb"; blocks[810] = "piston"; blocks[812] = "bookshelf"; blocks[901] = "bookshelf"; blocks[903] = "piston"; blocks[904] = "bookshelf"; blocks[906] = "bookshelf"; blocks[908] = "bookshelf"; blocks[910] = "piston"; blocks[912] = "bookshelf"; blocks[1001] = "bookshelf"; blocks[1003] = "piston"; blocks[1004] = "piston"; blocks[1005] = "piston"; blocks[1006] = "piston"; blocks[1007] = "piston"; blocks[1008] = "piston"; blocks[1009] = "piston"; blocks[1010] = "piston"; blocks[1012] = "bookshelf"; blocks[1101] = "bookshelf"; blocks[1112] = "bookshelf"; blocks[1201] = "bookshelf"; blocks[1202] = "bookshelf"; blocks[1203] = "bookshelf"; blocks[1204] = "bookshelf"; blocks[1205] = "bookshelf"; blocks[1206] = "enchanting_table"; blocks[1207] = "bookshelf"; blocks[1208] = "bookshelf"; blocks[1209] = "bookshelf"; blocks[1210] = "bookshelf"; blocks[1211] = "bookshelf"; blocks[1212] = "bookshelf";
@@ -204,68 +223,47 @@ function handleComplete(evt, comp) {
 		if (direction === "left") target = pos - 100;
 		if (direction === "right") target = pos + 100;
 		if (events[target] === 0) {
-			if (blocks[target] === "bookshelf") return autoChat(1);
-			if (blocks[target] === "ladder") return autoChat(2);
-			if (blocks[target] === "cauldron") return autoChat(3);
-			if (blocks[target] === "jukebox") return autoChat(4);
-			if (blocks[target] === "crafting_table") return autoChat(5);
-			if (blocks[target] === "furnace") return autoChat(6);
-			if (blocks[target] === "furnace_on") return autoChat(7);
-			if (blocks[target] === "brewing_stand") return autoChat(8);
-			if (blocks[target] === "enchanting_table") return autoChat(9);
-			if (blocks[target] === "loom") return autoChat(10);
-			if (blocks[target] === "smoker") return autoChat(11);
-			if (blocks[target] === "blast_furnace") return autoChat(12);
-			if (blocks[target] === "cartography_table") return autoChat(13);
-			if (blocks[target] === "fletching_table") return autoChat(14);
-			if (blocks[target] === "smithing_table") return autoChat(15);
-			if (blocks[target] === "beehive") return autoChat(16);
-			if (blocks[target] === "iron_door") return autoChat(17);
-			if (blocks[target] === "spawner") return autoChat(18);
-			if (blocks[target] === "iron_bars") return autoChat(19);
-			if (blocks[target] === "barrel") return autoChat(20);
-			if (blocks[target] === "barrel_open") return autoChat(21);
-			if (blocks[target] === "scaffolding") return autoChat(22);
-			if (blocks[target] === "end_portal_frame") return autoChat(23);
+			autoChat(blocks[target]);
 		} else {
 			let omap = events[target].map;
 			let ox = events[target].x;
 			let oy = events[target].y;
+			let oway = events[target].way
 			let oitem = events[target].item;
-			if (blocks[target] === "oak_door") return transport(omap, ox, oy);
-			if (blocks[target] === "ladder") return transport(omap, ox, oy);
+			if (blocks[target] === "oak_door") return transport(omap, ox, oy, oway);
+			if (blocks[target] === "ladder") return transport(omap, ox, oy, oway);
 			if (blocks[target] === "enchanting_table") return item(oitem);
-			if (target % 100 === 13 || target % 100 === 0) return transport(omap, ox, oy);
-			if (parseInt(target / 100) === 13 || parseInt(target / 100) === 0) return transport(omap, ox, oy);
+			if (target % 100 === 13 || target % 100 === 0) return transport(omap, ox, oy, oway);
+			if (parseInt(target / 100) === 13 || parseInt(target / 100) === 0) return transport(omap, ox, oy, oway);
 		}
 	}
 
 	function autoChat(type) {
 		line_2 = "";
 		line_3 = "";
-		if (type === 1) return	autoChatData("書櫃", "除了舊書以外似乎沒有其他東西", 0, 0);
-		if (type === 2) return	autoChatData("樓梯", "樓梯損毀，無法使用", 0, 0);
-		if (type === 3) return	autoChatData("洗手台", "水龍頭已經沒有水了", 0, 0);
-		if (type === 4) return	autoChatData("唱片機", "需要放入唱片", 0, 0);
-		if (type === 5) return	autoChatData("工作台", "好像是做木工的地方", "不過桌上沒有東西", 0);
-		if (type === 6) return	autoChatData("爐子", "爐子裡沒東西", 0, 0);
-		if (type === 7) return	autoChatData("爐子", "還剩一些餘火", 0, 0);
-		if (type === 8) return	autoChatData("釀造台", "儀器都生鏽了", 0, 0);
-		if (type === 9) return	autoChatData("精裝桌子", "好像是用來展示書本的地方", "不過找不到像樣的書", 0);
-		if (type === 10) return	autoChatData("鋼琴", "鋼琴上覆著一層厚厚的灰塵", 0, 0);
-		if (type === 11) return	autoChatData("控制爐", "好像開不起來", 0, 0);
-		if (type === 12) return	autoChatData("火爐", "正燒著大量的煤，似乎是供應能源的地方", 0, 0);
-		if (type === 13) return	autoChatData("桌子", "桌上只剩殘破的地圖", 0, 0);
-		if (type === 14) return	autoChatData("桌子", "桌上有未完成的弓箭", 0, 0);
-		if (type === 15) return	autoChatData("工作檯", "桌上沒有東西", 0, 0);
-		if (type === 16) return	autoChatData("抽屜", "抽屜裡沒東西", 0, 0);
-		if (type === 17) return	autoChatData("鐵門", "需要鑰匙才能開啟", 0, 0);
-		if (type === 18) return	autoChatData("鐵籠", "不知道裡面放的是甚麼東西，需要工具開啟", 0, 0);
-		if (type === 19) return	autoChatData("鐵柵欄", "似乎需要工具破壞", 0, 0);
-		if (type === 20) return	autoChatData("儲藏箱", "無法開啟", 0, 0);
-		if (type === 21) return	autoChatData("儲藏箱", "空空如也", 0, 0);
-		if (type === 22) return	autoChatData("桌子", "桌上沒有東西", 0, 0);
-		if (type === 23) return	autoChatData("雕琢過的桌子", "桌上沒有東西", 0, 0);
+		if (type === "bookshelf") return autoChatData("書櫃", "除了舊書以外似乎沒有其他東西", 0, 0);
+		if (type === "ladder") return autoChatData("樓梯", "樓梯損毀，無法使用", 0, 0);
+		if (type === "cauldron") return autoChatData("洗手台", "水龍頭已經沒有水了", 0, 0);
+		if (type === "jukebox") return autoChatData("唱片機", "需要放入唱片", 0, 0);
+		if (type === "crafting_table") return autoChatData("工作台", "好像是做木工的地方", "不過桌上沒有東西", 0);
+		if (type === "furnace") return autoChatData("爐子", "爐子裡沒東西", 0, 0);
+		if (type === "furnace_on") return autoChatData("爐子", "還剩一些餘火", 0, 0);
+		if (type === "brewing_stand") return autoChatData("釀造台", "儀器都生鏽了", 0, 0);
+		if (type === "enchanting_table") return autoChatData("精裝桌子", "好像是用來展示書本的地方", "不過找不到像樣的書", 0);
+		if (type === "loom") return autoChatData("鋼琴", "鋼琴上覆著一層厚厚的灰塵", 0, 0);
+		if (type === "smoker") return autoChatData("控制爐", "好像開不起來", 0, 0);
+		if (type === "blast_furnace") return autoChatData("火爐", "正燒著大量的煤，似乎是供應能源的地方", 0, 0);
+		if (type === "cartography_table") return autoChatData("桌子", "桌上只剩殘破的地圖", 0, 0);
+		if (type === "fletching_table") return autoChatData("桌子", "桌上有未完成的弓箭", 0, 0);
+		if (type === "smithing_table") return autoChatData("工作檯", "桌上沒有東西", 0, 0);
+		if (type === "beehive") return autoChatData("抽屜", "抽屜裡沒東西", 0, 0);
+		if (type === "iron_door") return autoChatData("鐵門", "需要鑰匙才能開啟", 0, 0);
+		if (type === "spawner") return autoChatData("鐵籠", "不知道裡面放的是甚麼東西，需要工具開啟", 0, 0);
+		if (type === "iron_bars") return autoChatData("鐵柵欄", "似乎需要工具破壞", 0, 0);
+		if (type === "barrel") return autoChatData("儲藏箱", "無法開啟", 0, 0);
+		if (type === "barrel_open") return autoChatData("儲藏箱", "空空如也", 0, 0);
+		if (type === "scaffolding") return autoChatData("桌子", "桌上沒有東西", 0, 0);
+		if (type === "end_portal_frame") return autoChatData("雕琢過的桌子", "桌上沒有東西", 0, 0);
 	}
 
 	function chat() {
@@ -360,13 +358,14 @@ function handleComplete(evt, comp) {
 		}
 	}
 	//傳送
-	function transport(maps, x, y) {
+	function transport(maps, x, y, way) {
 		map = maps;
 		player1_x = x
 		player1_y = y
 		robot.x = player1_x * 50 - 25;
 		robot.y = player1_y * 50 - 25;
 		location = (player1_x) * 100 + (player1_y);
+		if (way) direction = way;
 		mapChangeFn()
 		titleChangeFn();
 	}
@@ -374,9 +373,9 @@ function handleComplete(evt, comp) {
 	function autoChatData(speakor, txt1, txt2, txt3) {
 		chats = 0;
 		speaker = speakor;
-		if(txt1) line_1 = txt1;
-		if(txt2) line_2 = txt2;
-		if(txt3) line_3 = txt3;
+		if (txt1) line_1 = txt1;
+		if (txt2) line_2 = txt2;
+		if (txt3) line_3 = txt3;
 		chat_on();
 	}
 	//得到物品
@@ -390,6 +389,15 @@ function handleComplete(evt, comp) {
 		exportRoot.addChild(object);
 		if (gotoAndPlay) object.gotoAndPlay(gotoAndPlay);
 		object.visible = visible;
+	}
+	//生成物件(items)初始參數設定
+	function item_summon(object, x, y, gotoAndPlay, visible) {
+		object.x = 574 + 52 * x
+		object.y = 103 + 69 * y
+		exportRoot.addChild(object);
+		if (gotoAndPlay) object.gotoAndPlay(gotoAndPlay);
+		object.visible = visible;
+		object.hitArea = hitArea;
 	}
 	//遊戲控制
 	function control(way, steps, direct, walls) {
