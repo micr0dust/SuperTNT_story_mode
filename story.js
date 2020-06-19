@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"story_atlas_", frames: [[1076,852,32,32],[1110,852,32,32],[1110,886,32,32],[1178,818,32,32],[1144,852,32,32],[1076,886,32,32],[1144,886,32,32],[1212,818,32,32],[1859,285,32,32],[1893,285,32,32],[1464,652,32,32],[1464,584,32,32],[1532,652,32,32],[946,482,300,300],[1859,155,128,128],[946,784,128,128],[1961,343,32,32],[1995,343,32,32],[1464,618,32,32],[0,1288,256,256],[1927,285,32,32],[1464,686,32,32],[1927,319,32,32],[0,948,1198,338],[1498,686,32,32],[1532,686,32,32],[2021,0,16,16],[1032,1288,236,202],[1464,720,32,32],[1498,652,32,32],[1961,309,32,32],[1498,720,32,32],[1498,584,32,32],[1532,720,32,32],[1995,309,32,32],[1532,584,32,32],[1464,754,32,32],[1498,618,32,32],[1859,319,32,32],[1498,754,32,32],[1532,618,32,32],[1893,319,32,32],[1532,754,32,32],[1076,784,32,32],[1076,818,32,32],[1110,784,32,32],[1144,784,32,32],[1178,784,32,32],[946,0,640,480],[1212,784,32,32],[1110,818,32,32],[1144,818,32,32],[1989,275,32,32],[1989,241,32,32],[1959,1413,32,32],[1989,207,32,32],[1993,1107,32,32],[946,914,32,32],[1925,1039,32,32],[1959,1175,32,32],[1925,1073,32,32],[1891,1141,32,32],[516,1288,256,256],[1464,482,100,100],[1993,1175,32,32],[1200,878,231,358],[1859,0,160,153],[1959,1141,32,32],[1993,1209,32,32],[1959,1073,32,32],[1925,1209,32,32],[1637,1192,32,32],[1993,1073,32,32],[1891,1039,32,32],[1925,1141,32,32],[1891,1107,32,32],[1993,1141,32,32],[1925,1175,32,32],[1959,1107,32,32],[1014,914,32,32],[1959,1209,32,32],[1891,1209,32,32],[1925,1107,32,32],[980,914,32,32],[1637,1226,32,32],[1891,1175,32,32],[1032,1492,300,139],[258,1288,256,256],[1200,1238,32,32],[1234,1238,32,32],[1268,1238,32,32],[1959,1039,32,32],[1588,0,269,378],[1993,1039,32,32],[1302,1238,32,32],[1891,1073,32,32],[1891,1277,32,32],[1338,1272,32,32],[1925,1277,32,32],[774,1288,256,256],[1676,801,356,236],[1925,1243,32,32],[1336,1238,32,32],[1637,1260,32,32],[1370,1238,32,32],[1304,1272,32,32],[1891,1243,32,32],[1959,1243,32,32],[1993,1243,32,32],[1372,1272,32,32],[2021,18,16,16],[1637,1429,240,177],[1959,1277,32,32],[1270,1306,32,32],[1270,1272,32,32],[1993,1277,32,32],[1637,1294,32,32],[1304,1306,32,32],[1338,1306,32,32],[1891,1311,32,32],[1338,1340,32,32],[1959,1311,32,32],[1270,1340,32,32],[1372,1340,32,32],[1372,1306,32,32],[1304,1340,32,32],[1925,1311,32,32],[1993,1311,32,32],[1637,1328,32,32],[1270,1374,32,32],[1959,1345,32,32],[1891,1379,32,32],[1304,1374,32,32],[1270,1408,32,32],[1372,1408,32,32],[1925,1379,32,32],[1338,1374,32,32],[1338,1408,32,32],[1372,1374,32,32],[1959,1379,32,32],[1891,1345,32,32],[1304,1408,32,32],[1637,1362,32,32],[1993,1379,32,32],[1248,482,214,394],[1588,380,241,407],[1464,789,210,401],[1676,1039,213,388],[1433,1192,202,397],[1891,1413,32,32],[1925,1345,32,32],[1989,155,50,50],[1831,380,215,419],[0,0,944,946],[1925,1413,32,32],[1993,1345,32,32]]}
+		{name:"story_atlas_", frames: [[1993,1379,32,32],[1270,1408,32,32],[1304,1408,32,32],[1891,1379,32,32],[1925,1379,32,32],[1372,1374,32,32],[1959,1379,32,32],[1959,1175,32,32],[1891,1141,32,32],[1959,1209,32,32],[1959,1107,32,32],[1993,1243,32,32],[1268,1238,32,32],[946,482,300,300],[946,784,128,128],[1859,155,128,128],[1993,1141,32,32],[1925,1141,32,32],[1959,1141,32,32],[516,1288,256,256],[1891,1243,32,32],[1336,1238,32,32],[1891,1175,32,32],[0,948,1198,338],[1302,1238,32,32],[1270,1272,32,32],[2021,18,16,16],[1032,1288,236,202],[1370,1238,32,32],[1637,1260,32,32],[1925,1175,32,32],[1925,1243,32,32],[1993,1175,32,32],[1637,1192,32,32],[1993,1107,32,32],[1304,1272,32,32],[1959,1243,32,32],[1234,1238,32,32],[1891,1277,32,32],[1959,1277,32,32],[1270,1306,32,32],[1925,1209,32,32],[1372,1306,32,32],[1338,1272,32,32],[1925,1277,32,32],[1372,1272,32,32],[1993,1277,32,32],[1637,1294,32,32],[946,0,640,480],[1304,1306,32,32],[1338,1306,32,32],[1891,1209,32,32],[1891,1311,32,32],[1925,1311,32,32],[1959,1311,32,32],[1993,1311,32,32],[1993,1209,32,32],[1637,1226,32,32],[1637,1328,32,32],[1200,1238,32,32],[1270,1340,32,32],[1304,1340,32,32],[774,1288,256,256],[1464,482,100,100],[1338,1340,32,32],[1200,878,231,358],[1859,0,160,153],[1372,1340,32,32],[1891,1345,32,32],[1925,1345,32,32],[1304,1374,32,32],[1270,1374,32,32],[1637,1362,32,32],[1338,1374,32,32],[1959,1345,32,32],[1993,1345,32,32],[1532,618,32,32],[1498,720,32,32],[1498,618,32,32],[1989,207,32,32],[1927,319,32,32],[1995,343,32,32],[1927,285,32,32],[1859,319,32,32],[1464,652,32,32],[1893,319,32,32],[1032,1492,300,139],[0,1288,256,256],[1532,720,32,32],[1498,652,32,32],[1893,285,32,32],[1498,686,32,32],[1588,0,269,378],[1532,652,32,32],[1961,343,32,32],[1989,275,32,32],[1989,241,32,32],[1464,754,32,32],[1464,584,32,32],[258,1288,256,256],[1676,801,356,236],[1498,754,32,32],[1464,686,32,32],[1532,754,32,32],[1464,720,32,32],[1532,686,32,32],[1859,285,32,32],[1498,584,32,32],[1961,309,32,32],[1110,784,32,32],[2021,0,16,16],[1637,1429,240,177],[1144,784,32,32],[1076,784,32,32],[1178,784,32,32],[1464,618,32,32],[1532,584,32,32],[1995,309,32,32],[1891,1039,32,32],[1212,784,32,32],[1144,852,32,32],[1076,818,32,32],[1110,818,32,32],[1144,818,32,32],[980,914,32,32],[1993,1039,32,32],[1178,818,32,32],[1212,818,32,32],[1144,886,32,32],[1076,852,32,32],[1959,1039,32,32],[1110,852,32,32],[1076,886,32,32],[1110,886,32,32],[946,914,32,32],[1014,914,32,32],[1925,1039,32,32],[1891,1073,32,32],[1993,1073,32,32],[1891,1107,32,32],[1925,1073,32,32],[1959,1073,32,32],[1925,1107,32,32],[1372,1408,32,32],[1248,482,214,394],[1588,380,241,407],[1464,789,210,401],[1676,1039,213,388],[1433,1192,202,397],[1338,1408,32,32],[1891,1413,32,32],[1959,1413,32,32],[1989,155,50,50],[1831,380,215,419],[0,0,944,946],[1993,1413,32,32],[1925,1413,32,32]]}
 ];
 
 
@@ -1061,44 +1061,51 @@ lib.ssMetadata = [
 
 
 
-(lib.tnt_side = function() {
+(lib.sugar_cane = function() {
 	this.initialize(ss["story_atlas_"]);
 	this.gotoAndStop(150);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.tree = function() {
+(lib.tnt_side = function() {
 	this.initialize(ss["story_atlas_"]);
 	this.gotoAndStop(151);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.waiter_ghost = function() {
+(lib.tree = function() {
 	this.initialize(ss["story_atlas_"]);
 	this.gotoAndStop(152);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.wall = function() {
+(lib.waiter_ghost = function() {
 	this.initialize(ss["story_atlas_"]);
 	this.gotoAndStop(153);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.white_wool = function() {
+(lib.wall = function() {
 	this.initialize(ss["story_atlas_"]);
 	this.gotoAndStop(154);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.yellow_wool = function() {
+(lib.white_wool = function() {
 	this.initialize(ss["story_atlas_"]);
 	this.gotoAndStop(155);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.yellow_wool = function() {
+	this.initialize(ss["story_atlas_"]);
+	this.gotoAndStop(156);
 }).prototype = p = new cjs.Sprite();
 
 
@@ -1267,7 +1274,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,599,169);
 
 
 (lib.blocks = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{wall:0,gold:1,tree:2,air:3,stone:4,smooth_stone:5,granite:6,polished_granite:7,diorite:8,polished_diorite:9,andesite:10,polished_andesite:11,sandstone:12,smooth_sandstone:13,chiseled_sandstone:14,cut_sandstone:15,red_sandstone:16,smooth_red_sandstone:17,chiseled_red_sandstone:18,cut_red_sandstone:19,cobblestone:20,mossy_cobblestone:21,prismarine_bricks:22,dark_prismarine:23,netherrack:24,end_stone:25,end_stone_bricks:26,bedrock:27,sand:28,gravel:29,soul_sand:30,stone_bricks:31,mossy_stone_bricks:32,cracked_stone_bricks:33,chiseled_stone_bricks:34,bricks:35,nether_bricks:36,dirt:37,coarse_dirt:38,podzol:39,farmland:40,grass_path:41,mycelium:42,oak_planks:43,spruce_planks:44,birch_planks:45,jungle_planks:46,acacia_planks:47,dark_oak_planks:48,stripped_oak_log:49,ice:50,frosted_ice:51,blue_ice:52,nether_quartz_ore:53,quartz_block:54,chiseled_quartz_block:55,magma_block:56,hay_block:57,dried_kelp_block:58,slime_block:59,redstone_ore:60,redstone_block:61,gold_ore:62,gold_block:63,iron_ore:64,iron_block:65,coal_ore:66,lapis_ore:67,lapis_block:68,emerald_ore:69,emerald_block:70,diamond_ore:71,diamond_block:72,cobweb:73,ladder:74,scaffolding:75,tnt:76,jack_o_lantern:77,glowstone:78,sea_lantern:79,bookshelf:80,cauldron:81,jukebox:82,composter:83,barrel:84,barrel_open:85,crafting_table:86,furnace:87,furnace_on:88,brewing_stand:89,enchanting_table:90,loom:91,smoker:92,blast_furnace:93,cartography_table:94,fletching_table:95,smithing_table:96,beehive:97,bee_nest:98,honey_block:99,honeycomb_block:100,white_wool:101,orange_wool:102,magenta_wool:103,light_blue_wool:104,yellow_wool:105,lime_wool:106,pink_wool:107,gray_wool:108,light_gray_wool:109,cyan_wool:110,purple_wool:111,blue_wool:112,brown_wool:113,green_wool:114,red_wool:115,black_wool:116,piston:117,redstone_lamp:118,iron_bars:119,spruce_trapdoor:120,acacia_door:121,oak_door:122,iron_door:123,dark_oak_door:124,spawner:125,beacon:126,"none":127,blood:128,blood_foot_left:129,blood_foot_right:130,bookshelf2:131,"knife":132,role:133,cheif:134,libriarier:135,waiter_ghost:136,goddad:137,ghost_woman:138,miner:139});
+	this.initialize(mode,startPosition,loop,{wall:0,gold:1,tree:2,air:3,stone:4,smooth_stone:5,granite:6,polished_granite:7,diorite:8,polished_diorite:9,andesite:10,polished_andesite:11,sandstone:12,smooth_sandstone:13,chiseled_sandstone:14,cut_sandstone:15,red_sandstone:16,smooth_red_sandstone:17,chiseled_red_sandstone:18,cut_red_sandstone:19,cobblestone:20,mossy_cobblestone:21,prismarine_bricks:22,dark_prismarine:23,netherrack:24,end_stone:25,end_stone_bricks:26,bedrock:27,sand:28,gravel:29,soul_sand:30,stone_bricks:31,mossy_stone_bricks:32,cracked_stone_bricks:33,chiseled_stone_bricks:34,bricks:35,nether_bricks:36,dirt:37,coarse_dirt:38,podzol:39,farmland:40,grass_path:41,mycelium:42,oak_planks:43,spruce_planks:44,birch_planks:45,jungle_planks:46,acacia_planks:47,dark_oak_planks:48,stripped_oak_log:49,ice:50,frosted_ice:51,blue_ice:52,nether_quartz_ore:53,quartz_block:54,chiseled_quartz_block:55,magma_block:56,hay_block:57,dried_kelp_block:58,slime_block:59,redstone_ore:60,redstone_block:61,gold_ore:62,gold_block:63,iron_ore:64,iron_block:65,coal_ore:66,lapis_ore:67,lapis_block:68,emerald_ore:69,emerald_block:70,diamond_ore:71,diamond_block:72,cobweb:73,ladder:74,scaffolding:75,tnt:76,jack_o_lantern:77,glowstone:78,sea_lantern:79,bookshelf:80,cauldron:81,jukebox:82,composter:83,barrel:84,barrel_open:85,crafting_table:86,furnace:87,furnace_on:88,brewing_stand:89,enchanting_table:90,loom:91,smoker:92,blast_furnace:93,cartography_table:94,fletching_table:95,smithing_table:96,beehive:97,bee_nest:98,honey_block:99,honeycomb_block:100,white_wool:101,orange_wool:102,magenta_wool:103,light_blue_wool:104,yellow_wool:105,lime_wool:106,pink_wool:107,gray_wool:108,light_gray_wool:109,cyan_wool:110,purple_wool:111,blue_wool:112,brown_wool:113,green_wool:114,red_wool:115,black_wool:116,piston:117,redstone_lamp:118,iron_bars:119,spruce_trapdoor:120,acacia_door:121,oak_door:122,iron_door:123,dark_oak_door:124,spawner:125,beacon:126,sugar_cane:127,"none":128,blood:129,blood_foot_left:130,blood_foot_right:131,bookshelf2:132,"knife":133,role:134,cheif:135,libriarier:136,waiter_ghost:137,goddad:138,ghost_woman:139,miner:140,"monster":141});
 
 	// timeline functions:
 	this.frame_0 = function() {
@@ -1690,9 +1697,15 @@ p.nominalBounds = new cjs.Rectangle(0,0,599,169);
 	this.frame_139 = function() {
 		this.stop();
 	}
+	this.frame_140 = function() {
+		this.stop();
+	}
+	this.frame_141 = function() {
+		this.stop();
+	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1).call(this.frame_3).wait(1).call(this.frame_4).wait(1).call(this.frame_5).wait(1).call(this.frame_6).wait(1).call(this.frame_7).wait(1).call(this.frame_8).wait(1).call(this.frame_9).wait(1).call(this.frame_10).wait(1).call(this.frame_11).wait(1).call(this.frame_12).wait(1).call(this.frame_13).wait(1).call(this.frame_14).wait(1).call(this.frame_15).wait(1).call(this.frame_16).wait(1).call(this.frame_17).wait(1).call(this.frame_18).wait(1).call(this.frame_19).wait(1).call(this.frame_20).wait(1).call(this.frame_21).wait(1).call(this.frame_22).wait(1).call(this.frame_23).wait(1).call(this.frame_24).wait(1).call(this.frame_25).wait(1).call(this.frame_26).wait(1).call(this.frame_27).wait(1).call(this.frame_28).wait(1).call(this.frame_29).wait(1).call(this.frame_30).wait(1).call(this.frame_31).wait(1).call(this.frame_32).wait(1).call(this.frame_33).wait(1).call(this.frame_34).wait(1).call(this.frame_35).wait(1).call(this.frame_36).wait(1).call(this.frame_37).wait(1).call(this.frame_38).wait(1).call(this.frame_39).wait(1).call(this.frame_40).wait(1).call(this.frame_41).wait(1).call(this.frame_42).wait(1).call(this.frame_43).wait(1).call(this.frame_44).wait(1).call(this.frame_45).wait(1).call(this.frame_46).wait(1).call(this.frame_47).wait(1).call(this.frame_48).wait(1).call(this.frame_49).wait(1).call(this.frame_50).wait(1).call(this.frame_51).wait(1).call(this.frame_52).wait(1).call(this.frame_53).wait(1).call(this.frame_54).wait(1).call(this.frame_55).wait(1).call(this.frame_56).wait(1).call(this.frame_57).wait(1).call(this.frame_58).wait(1).call(this.frame_59).wait(1).call(this.frame_60).wait(1).call(this.frame_61).wait(1).call(this.frame_62).wait(1).call(this.frame_63).wait(1).call(this.frame_64).wait(1).call(this.frame_65).wait(1).call(this.frame_66).wait(1).call(this.frame_67).wait(1).call(this.frame_68).wait(1).call(this.frame_69).wait(1).call(this.frame_70).wait(1).call(this.frame_71).wait(1).call(this.frame_72).wait(1).call(this.frame_73).wait(1).call(this.frame_74).wait(1).call(this.frame_75).wait(1).call(this.frame_76).wait(1).call(this.frame_77).wait(1).call(this.frame_78).wait(1).call(this.frame_79).wait(1).call(this.frame_80).wait(1).call(this.frame_81).wait(1).call(this.frame_82).wait(1).call(this.frame_83).wait(1).call(this.frame_84).wait(1).call(this.frame_85).wait(1).call(this.frame_86).wait(1).call(this.frame_87).wait(1).call(this.frame_88).wait(1).call(this.frame_89).wait(1).call(this.frame_90).wait(1).call(this.frame_91).wait(1).call(this.frame_92).wait(1).call(this.frame_93).wait(1).call(this.frame_94).wait(1).call(this.frame_95).wait(1).call(this.frame_96).wait(1).call(this.frame_97).wait(1).call(this.frame_98).wait(1).call(this.frame_99).wait(1).call(this.frame_100).wait(1).call(this.frame_101).wait(1).call(this.frame_102).wait(1).call(this.frame_103).wait(1).call(this.frame_104).wait(1).call(this.frame_105).wait(1).call(this.frame_106).wait(1).call(this.frame_107).wait(1).call(this.frame_108).wait(1).call(this.frame_109).wait(1).call(this.frame_110).wait(1).call(this.frame_111).wait(1).call(this.frame_112).wait(1).call(this.frame_113).wait(1).call(this.frame_114).wait(1).call(this.frame_115).wait(1).call(this.frame_116).wait(1).call(this.frame_117).wait(1).call(this.frame_118).wait(1).call(this.frame_119).wait(1).call(this.frame_120).wait(1).call(this.frame_121).wait(1).call(this.frame_122).wait(1).call(this.frame_123).wait(1).call(this.frame_124).wait(1).call(this.frame_125).wait(1).call(this.frame_126).wait(1).call(this.frame_127).wait(1).call(this.frame_128).wait(1).call(this.frame_129).wait(1).call(this.frame_130).wait(1).call(this.frame_131).wait(1).call(this.frame_132).wait(1).call(this.frame_133).wait(1).call(this.frame_134).wait(1).call(this.frame_135).wait(1).call(this.frame_136).wait(1).call(this.frame_137).wait(1).call(this.frame_138).wait(1).call(this.frame_139).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1).call(this.frame_3).wait(1).call(this.frame_4).wait(1).call(this.frame_5).wait(1).call(this.frame_6).wait(1).call(this.frame_7).wait(1).call(this.frame_8).wait(1).call(this.frame_9).wait(1).call(this.frame_10).wait(1).call(this.frame_11).wait(1).call(this.frame_12).wait(1).call(this.frame_13).wait(1).call(this.frame_14).wait(1).call(this.frame_15).wait(1).call(this.frame_16).wait(1).call(this.frame_17).wait(1).call(this.frame_18).wait(1).call(this.frame_19).wait(1).call(this.frame_20).wait(1).call(this.frame_21).wait(1).call(this.frame_22).wait(1).call(this.frame_23).wait(1).call(this.frame_24).wait(1).call(this.frame_25).wait(1).call(this.frame_26).wait(1).call(this.frame_27).wait(1).call(this.frame_28).wait(1).call(this.frame_29).wait(1).call(this.frame_30).wait(1).call(this.frame_31).wait(1).call(this.frame_32).wait(1).call(this.frame_33).wait(1).call(this.frame_34).wait(1).call(this.frame_35).wait(1).call(this.frame_36).wait(1).call(this.frame_37).wait(1).call(this.frame_38).wait(1).call(this.frame_39).wait(1).call(this.frame_40).wait(1).call(this.frame_41).wait(1).call(this.frame_42).wait(1).call(this.frame_43).wait(1).call(this.frame_44).wait(1).call(this.frame_45).wait(1).call(this.frame_46).wait(1).call(this.frame_47).wait(1).call(this.frame_48).wait(1).call(this.frame_49).wait(1).call(this.frame_50).wait(1).call(this.frame_51).wait(1).call(this.frame_52).wait(1).call(this.frame_53).wait(1).call(this.frame_54).wait(1).call(this.frame_55).wait(1).call(this.frame_56).wait(1).call(this.frame_57).wait(1).call(this.frame_58).wait(1).call(this.frame_59).wait(1).call(this.frame_60).wait(1).call(this.frame_61).wait(1).call(this.frame_62).wait(1).call(this.frame_63).wait(1).call(this.frame_64).wait(1).call(this.frame_65).wait(1).call(this.frame_66).wait(1).call(this.frame_67).wait(1).call(this.frame_68).wait(1).call(this.frame_69).wait(1).call(this.frame_70).wait(1).call(this.frame_71).wait(1).call(this.frame_72).wait(1).call(this.frame_73).wait(1).call(this.frame_74).wait(1).call(this.frame_75).wait(1).call(this.frame_76).wait(1).call(this.frame_77).wait(1).call(this.frame_78).wait(1).call(this.frame_79).wait(1).call(this.frame_80).wait(1).call(this.frame_81).wait(1).call(this.frame_82).wait(1).call(this.frame_83).wait(1).call(this.frame_84).wait(1).call(this.frame_85).wait(1).call(this.frame_86).wait(1).call(this.frame_87).wait(1).call(this.frame_88).wait(1).call(this.frame_89).wait(1).call(this.frame_90).wait(1).call(this.frame_91).wait(1).call(this.frame_92).wait(1).call(this.frame_93).wait(1).call(this.frame_94).wait(1).call(this.frame_95).wait(1).call(this.frame_96).wait(1).call(this.frame_97).wait(1).call(this.frame_98).wait(1).call(this.frame_99).wait(1).call(this.frame_100).wait(1).call(this.frame_101).wait(1).call(this.frame_102).wait(1).call(this.frame_103).wait(1).call(this.frame_104).wait(1).call(this.frame_105).wait(1).call(this.frame_106).wait(1).call(this.frame_107).wait(1).call(this.frame_108).wait(1).call(this.frame_109).wait(1).call(this.frame_110).wait(1).call(this.frame_111).wait(1).call(this.frame_112).wait(1).call(this.frame_113).wait(1).call(this.frame_114).wait(1).call(this.frame_115).wait(1).call(this.frame_116).wait(1).call(this.frame_117).wait(1).call(this.frame_118).wait(1).call(this.frame_119).wait(1).call(this.frame_120).wait(1).call(this.frame_121).wait(1).call(this.frame_122).wait(1).call(this.frame_123).wait(1).call(this.frame_124).wait(1).call(this.frame_125).wait(1).call(this.frame_126).wait(1).call(this.frame_127).wait(1).call(this.frame_128).wait(1).call(this.frame_129).wait(1).call(this.frame_130).wait(1).call(this.frame_131).wait(1).call(this.frame_132).wait(1).call(this.frame_133).wait(1).call(this.frame_134).wait(1).call(this.frame_135).wait(1).call(this.frame_136).wait(1).call(this.frame_137).wait(1).call(this.frame_138).wait(1).call(this.frame_139).wait(1).call(this.frame_140).wait(1).call(this.frame_141).wait(1));
 
 	// 圖層_1
 	this.instance = new lib.wall();
@@ -2219,54 +2232,58 @@ p.nominalBounds = new cjs.Rectangle(0,0,599,169);
 	this.instance_130.parent = this;
 	this.instance_130.setTransform(-25,-25,1.5625,1.5625);
 
-	this.instance_131 = new lib.blood();
+	this.instance_131 = new lib.sugar_cane();
 	this.instance_131.parent = this;
-	this.instance_131.setTransform(-25,-25,0.1667,0.1667);
+	this.instance_131.setTransform(-25,-25,1.5625,1.5625);
 
-	this.instance_132 = new lib.blood_foot_left();
+	this.instance_132 = new lib.blood();
 	this.instance_132.parent = this;
-	this.instance_132.setTransform(-25,-25,0.3906,0.3906);
+	this.instance_132.setTransform(-25,-25,0.1667,0.1667);
 
-	this.instance_133 = new lib.blood_foot_right();
+	this.instance_133 = new lib.blood_foot_left();
 	this.instance_133.parent = this;
 	this.instance_133.setTransform(-25,-25,0.3906,0.3906);
 
-	this.instance_134 = new lib.bookshelf2();
+	this.instance_134 = new lib.blood_foot_right();
 	this.instance_134.parent = this;
-	this.instance_134.setTransform(-25,-25,0.1953,0.1953);
+	this.instance_134.setTransform(-25,-25,0.3906,0.3906);
 
-	this.instance_135 = new lib.knife();
+	this.instance_135 = new lib.bookshelf2();
 	this.instance_135.parent = this;
-	this.instance_135.setTransform(-25,-25,1.5625,1.5625);
+	this.instance_135.setTransform(-25,-25,0.1953,0.1953);
 
-	this.instance_136 = new lib.cheif();
+	this.instance_136 = new lib.knife();
 	this.instance_136.parent = this;
-	this.instance_136.setTransform(0,0,0.2475,0.2475);
+	this.instance_136.setTransform(-25,-25,1.5625,1.5625);
 
-	this.instance_137 = new lib.librarier();
+	this.instance_137 = new lib.cheif();
 	this.instance_137.parent = this;
-	this.instance_137.setTransform(0,0,0.1323,0.1323);
+	this.instance_137.setTransform(0,0,0.2475,0.2475);
 
-	this.instance_138 = new lib.waiter_ghost();
+	this.instance_138 = new lib.librarier();
 	this.instance_138.parent = this;
-	this.instance_138.setTransform(0,0,0.1193,0.1193);
+	this.instance_138.setTransform(0,0,0.1323,0.1323);
 
-	this.instance_139 = new lib.goddad();
+	this.instance_139 = new lib.waiter_ghost();
 	this.instance_139.parent = this;
-	this.instance_139.setTransform(0,0,0.1396,0.1397);
+	this.instance_139.setTransform(0,0,0.1193,0.1193);
 
-	this.instance_140 = new lib.ghost_woman();
+	this.instance_140 = new lib.goddad();
 	this.instance_140.parent = this;
-	this.instance_140.setTransform(0,0,0.5,0.5);
+	this.instance_140.setTransform(0,0,0.1396,0.1397);
 
-	this.instance_141 = new lib.miner();
+	this.instance_141 = new lib.ghost_woman();
 	this.instance_141.parent = this;
-	this.instance_141.setTransform(0,0,0.1953,0.1953);
+	this.instance_141.setTransform(0,0,0.5,0.5);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2,p:{scaleX:0.053,scaleY:0.0529,x:-24,y:-26}},{t:this.instance_1,p:{scaleX:0.053,scaleY:0.0529,x:-24}},{t:this.instance}]}).to({state:[{t:this.instance_2,p:{scaleX:0.3125,scaleY:0.3268,x:-26,y:-27}}]},1).to({state:[{t:this.instance_1,p:{scaleX:1,scaleY:1,x:-25}}]},1).to({state:[]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_4}]},1).to({state:[{t:this.instance_5}]},1).to({state:[{t:this.instance_6}]},1).to({state:[{t:this.instance_7}]},1).to({state:[{t:this.instance_8}]},1).to({state:[{t:this.instance_9}]},1).to({state:[{t:this.instance_10}]},1).to({state:[{t:this.instance_11}]},1).to({state:[{t:this.instance_12}]},1).to({state:[{t:this.instance_13}]},1).to({state:[{t:this.instance_14}]},1).to({state:[{t:this.instance_15}]},1).to({state:[{t:this.instance_16}]},1).to({state:[{t:this.instance_17}]},1).to({state:[{t:this.instance_18}]},1).to({state:[{t:this.instance_19}]},1).to({state:[{t:this.instance_20}]},1).to({state:[{t:this.instance_21}]},1).to({state:[{t:this.instance_22}]},1).to({state:[{t:this.instance_23}]},1).to({state:[{t:this.instance_24}]},1).to({state:[{t:this.instance_25}]},1).to({state:[{t:this.instance_26}]},1).to({state:[{t:this.instance_27}]},1).to({state:[{t:this.instance_28}]},1).to({state:[{t:this.instance_29}]},1).to({state:[{t:this.instance_30}]},1).to({state:[{t:this.instance_31}]},1).to({state:[{t:this.instance_32}]},1).to({state:[{t:this.instance_33}]},1).to({state:[{t:this.instance_34}]},1).to({state:[{t:this.instance_35}]},1).to({state:[{t:this.instance_36}]},1).to({state:[{t:this.instance_37}]},1).to({state:[{t:this.instance_38}]},1).to({state:[{t:this.instance_39}]},1).to({state:[{t:this.instance_40}]},1).to({state:[{t:this.instance_41}]},1).to({state:[{t:this.instance_42}]},1).to({state:[{t:this.instance_43}]},1).to({state:[{t:this.instance_44}]},1).to({state:[{t:this.instance_45}]},1).to({state:[{t:this.instance_46}]},1).to({state:[{t:this.instance_47}]},1).to({state:[{t:this.instance_48}]},1).to({state:[{t:this.instance_49}]},1).to({state:[{t:this.instance_50}]},1).to({state:[{t:this.instance_51}]},1).to({state:[{t:this.instance_52}]},1).to({state:[{t:this.instance_53}]},1).to({state:[{t:this.instance_54}]},1).to({state:[{t:this.instance_55}]},1).to({state:[{t:this.instance_56}]},1).to({state:[{t:this.instance_57}]},1).to({state:[{t:this.instance_58}]},1).to({state:[{t:this.instance_59}]},1).to({state:[{t:this.instance_60}]},1).to({state:[{t:this.instance_61}]},1).to({state:[{t:this.instance_62}]},1).to({state:[{t:this.instance_63}]},1).to({state:[{t:this.instance_64}]},1).to({state:[{t:this.instance_65}]},1).to({state:[{t:this.instance_66}]},1).to({state:[{t:this.instance_67}]},1).to({state:[{t:this.instance_68}]},1).to({state:[{t:this.instance_69}]},1).to({state:[{t:this.instance_70}]},1).to({state:[{t:this.instance_71}]},1).to({state:[{t:this.instance_72}]},1).to({state:[{t:this.instance_73}]},1).to({state:[{t:this.instance_74}]},1).to({state:[{t:this.instance_75}]},1).to({state:[{t:this.instance_76}]},1).to({state:[{t:this.instance_77}]},1).to({state:[{t:this.instance_78}]},1).to({state:[{t:this.instance_79}]},1).to({state:[{t:this.instance_80}]},1).to({state:[{t:this.instance_81}]},1).to({state:[{t:this.instance_82}]},1).to({state:[{t:this.instance_83}]},1).to({state:[{t:this.instance_84}]},1).to({state:[{t:this.instance_85}]},1).to({state:[{t:this.instance_86}]},1).to({state:[{t:this.instance_87}]},1).to({state:[{t:this.instance_88}]},1).to({state:[{t:this.instance_89}]},1).to({state:[{t:this.instance_90}]},1).to({state:[{t:this.instance_91}]},1).to({state:[{t:this.instance_92}]},1).to({state:[{t:this.instance_93}]},1).to({state:[{t:this.instance_94}]},1).to({state:[{t:this.instance_95}]},1).to({state:[{t:this.instance_96}]},1).to({state:[{t:this.instance_97}]},1).to({state:[{t:this.instance_98}]},1).to({state:[{t:this.instance_99}]},1).to({state:[{t:this.instance_100}]},1).to({state:[{t:this.instance_101}]},1).to({state:[{t:this.instance_102}]},1).to({state:[{t:this.instance_103}]},1).to({state:[{t:this.instance_104}]},1).to({state:[{t:this.instance_105}]},1).to({state:[{t:this.instance_106}]},1).to({state:[{t:this.instance_107}]},1).to({state:[{t:this.instance_108}]},1).to({state:[{t:this.instance_109}]},1).to({state:[{t:this.instance_110}]},1).to({state:[{t:this.instance_111}]},1).to({state:[{t:this.instance_112}]},1).to({state:[{t:this.instance_113}]},1).to({state:[{t:this.instance_114}]},1).to({state:[{t:this.instance_115}]},1).to({state:[{t:this.instance_116}]},1).to({state:[{t:this.instance_117}]},1).to({state:[{t:this.instance_118}]},1).to({state:[{t:this.instance_120},{t:this.instance_119}]},1).to({state:[{t:this.instance_122},{t:this.instance_121}]},1).to({state:[{t:this.instance_124},{t:this.instance_123}]},1).to({state:[{t:this.instance_126},{t:this.instance_125}]},1).to({state:[{t:this.instance_128},{t:this.instance_127}]},1).to({state:[{t:this.instance_129}]},1).to({state:[{t:this.instance_130}]},1).to({state:[]},1).to({state:[{t:this.instance_131}]},1).to({state:[{t:this.instance_132}]},1).to({state:[{t:this.instance_133}]},1).to({state:[{t:this.instance_134}]},1).to({state:[{t:this.instance_135}]},1).to({state:[]},1).to({state:[{t:this.instance_136}]},1).to({state:[{t:this.instance_137}]},1).to({state:[{t:this.instance_138}]},1).to({state:[{t:this.instance_139}]},1).to({state:[{t:this.instance_140}]},1).to({state:[{t:this.instance_141}]},1).wait(1));
+	this.instance_142 = new lib.miner();
+	this.instance_142.parent = this;
+	this.instance_142.setTransform(0,0,0.1953,0.1953);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2,p:{scaleX:0.053,scaleY:0.0529,x:-24,y:-26}},{t:this.instance_1,p:{scaleX:0.053,scaleY:0.0529,x:-24}},{t:this.instance}]}).to({state:[{t:this.instance_2,p:{scaleX:0.3125,scaleY:0.3268,x:-26,y:-27}}]},1).to({state:[{t:this.instance_1,p:{scaleX:1,scaleY:1,x:-25}}]},1).to({state:[]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_4}]},1).to({state:[{t:this.instance_5}]},1).to({state:[{t:this.instance_6}]},1).to({state:[{t:this.instance_7}]},1).to({state:[{t:this.instance_8}]},1).to({state:[{t:this.instance_9}]},1).to({state:[{t:this.instance_10}]},1).to({state:[{t:this.instance_11}]},1).to({state:[{t:this.instance_12}]},1).to({state:[{t:this.instance_13}]},1).to({state:[{t:this.instance_14}]},1).to({state:[{t:this.instance_15}]},1).to({state:[{t:this.instance_16}]},1).to({state:[{t:this.instance_17}]},1).to({state:[{t:this.instance_18}]},1).to({state:[{t:this.instance_19}]},1).to({state:[{t:this.instance_20}]},1).to({state:[{t:this.instance_21}]},1).to({state:[{t:this.instance_22}]},1).to({state:[{t:this.instance_23}]},1).to({state:[{t:this.instance_24}]},1).to({state:[{t:this.instance_25}]},1).to({state:[{t:this.instance_26}]},1).to({state:[{t:this.instance_27}]},1).to({state:[{t:this.instance_28}]},1).to({state:[{t:this.instance_29}]},1).to({state:[{t:this.instance_30}]},1).to({state:[{t:this.instance_31}]},1).to({state:[{t:this.instance_32}]},1).to({state:[{t:this.instance_33}]},1).to({state:[{t:this.instance_34}]},1).to({state:[{t:this.instance_35}]},1).to({state:[{t:this.instance_36}]},1).to({state:[{t:this.instance_37}]},1).to({state:[{t:this.instance_38}]},1).to({state:[{t:this.instance_39}]},1).to({state:[{t:this.instance_40}]},1).to({state:[{t:this.instance_41}]},1).to({state:[{t:this.instance_42}]},1).to({state:[{t:this.instance_43}]},1).to({state:[{t:this.instance_44}]},1).to({state:[{t:this.instance_45}]},1).to({state:[{t:this.instance_46}]},1).to({state:[{t:this.instance_47}]},1).to({state:[{t:this.instance_48}]},1).to({state:[{t:this.instance_49}]},1).to({state:[{t:this.instance_50}]},1).to({state:[{t:this.instance_51}]},1).to({state:[{t:this.instance_52}]},1).to({state:[{t:this.instance_53}]},1).to({state:[{t:this.instance_54}]},1).to({state:[{t:this.instance_55}]},1).to({state:[{t:this.instance_56}]},1).to({state:[{t:this.instance_57}]},1).to({state:[{t:this.instance_58}]},1).to({state:[{t:this.instance_59}]},1).to({state:[{t:this.instance_60}]},1).to({state:[{t:this.instance_61}]},1).to({state:[{t:this.instance_62}]},1).to({state:[{t:this.instance_63}]},1).to({state:[{t:this.instance_64}]},1).to({state:[{t:this.instance_65}]},1).to({state:[{t:this.instance_66}]},1).to({state:[{t:this.instance_67}]},1).to({state:[{t:this.instance_68}]},1).to({state:[{t:this.instance_69}]},1).to({state:[{t:this.instance_70}]},1).to({state:[{t:this.instance_71}]},1).to({state:[{t:this.instance_72}]},1).to({state:[{t:this.instance_73}]},1).to({state:[{t:this.instance_74}]},1).to({state:[{t:this.instance_75}]},1).to({state:[{t:this.instance_76}]},1).to({state:[{t:this.instance_77}]},1).to({state:[{t:this.instance_78}]},1).to({state:[{t:this.instance_79}]},1).to({state:[{t:this.instance_80}]},1).to({state:[{t:this.instance_81}]},1).to({state:[{t:this.instance_82}]},1).to({state:[{t:this.instance_83}]},1).to({state:[{t:this.instance_84}]},1).to({state:[{t:this.instance_85}]},1).to({state:[{t:this.instance_86}]},1).to({state:[{t:this.instance_87}]},1).to({state:[{t:this.instance_88}]},1).to({state:[{t:this.instance_89}]},1).to({state:[{t:this.instance_90}]},1).to({state:[{t:this.instance_91}]},1).to({state:[{t:this.instance_92}]},1).to({state:[{t:this.instance_93}]},1).to({state:[{t:this.instance_94}]},1).to({state:[{t:this.instance_95}]},1).to({state:[{t:this.instance_96}]},1).to({state:[{t:this.instance_97}]},1).to({state:[{t:this.instance_98}]},1).to({state:[{t:this.instance_99}]},1).to({state:[{t:this.instance_100}]},1).to({state:[{t:this.instance_101}]},1).to({state:[{t:this.instance_102}]},1).to({state:[{t:this.instance_103}]},1).to({state:[{t:this.instance_104}]},1).to({state:[{t:this.instance_105}]},1).to({state:[{t:this.instance_106}]},1).to({state:[{t:this.instance_107}]},1).to({state:[{t:this.instance_108}]},1).to({state:[{t:this.instance_109}]},1).to({state:[{t:this.instance_110}]},1).to({state:[{t:this.instance_111}]},1).to({state:[{t:this.instance_112}]},1).to({state:[{t:this.instance_113}]},1).to({state:[{t:this.instance_114}]},1).to({state:[{t:this.instance_115}]},1).to({state:[{t:this.instance_116}]},1).to({state:[{t:this.instance_117}]},1).to({state:[{t:this.instance_118}]},1).to({state:[{t:this.instance_120},{t:this.instance_119}]},1).to({state:[{t:this.instance_122},{t:this.instance_121}]},1).to({state:[{t:this.instance_124},{t:this.instance_123}]},1).to({state:[{t:this.instance_126},{t:this.instance_125}]},1).to({state:[{t:this.instance_128},{t:this.instance_127}]},1).to({state:[{t:this.instance_129}]},1).to({state:[{t:this.instance_130}]},1).to({state:[{t:this.instance_131}]},1).to({state:[]},1).to({state:[{t:this.instance_132}]},1).to({state:[{t:this.instance_133}]},1).to({state:[{t:this.instance_134}]},1).to({state:[{t:this.instance_135}]},1).to({state:[{t:this.instance_136}]},1).to({state:[]},1).to({state:[{t:this.instance_137}]},1).to({state:[{t:this.instance_138}]},1).to({state:[{t:this.instance_139}]},1).to({state:[{t:this.instance_140}]},1).to({state:[{t:this.instance_141}]},1).to({state:[{t:this.instance_142,p:{scaleX:0.1953,scaleY:0.1953}}]},1).to({state:[{t:this.instance_142,p:{scaleX:0.9766,scaleY:0.9766}}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-26,-29,84.4,79);
+p.nominalBounds = new cjs.Rectangle(-26,-29,276,279);
 
 
 // stage content:
@@ -2291,7 +2308,7 @@ lib.properties = {
 	color: "#FFCC99",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/story_atlas_.png?1592405572826", id:"story_atlas_"}
+		{src:"images/story_atlas_.png?1592576265492", id:"story_atlas_"}
 	],
 	preloads: []
 };

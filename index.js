@@ -78,6 +78,10 @@ function handleComplete(evt, comp) {
 	var player1_y = 5;
 	summon(robot, player1_x * 50 - 25, player1_y * 50 - 25, direction, true);
 
+	//monster
+	var monster = new lib.blocks();
+	summon(monster, -100, 150, "monster", true);
+
 	var hitArea = new createjs.Shape();
 	hitArea.graphics.beginFill("#000").drawRect(0, 0, 50, 50);//items
 
@@ -86,28 +90,24 @@ function handleComplete(evt, comp) {
 	item_summon(library_key, 1, 1, "key", true);
 	library_key.addEventListener('click', function () { itemTxt("library_key") });
 	var cd = new lib.item();
-	item_summon(cd, 2, 1, "cd", true);
+	item_summon(cd, 2, 1, "cd", false);
 	cd.addEventListener('click', function () { itemTxt("cd") });
 	var paper1 = new lib.item();
-	item_summon(paper1, 3, 1, "paper", true);
+	item_summon(paper1, 3, 1, "paper", false);
 	paper1.addEventListener('click', function () { itemTxt("paper1") });
 	var paper2 = new lib.item();
-	item_summon(paper2, 4, 1, "paper", true);
+	item_summon(paper2, 4, 1, "paper", false);
 	paper2.addEventListener('click', function () { itemTxt("paper2") });
 	var paper3 = new lib.item();
-	item_summon(paper3, 1, 2, "paper", true);
+	item_summon(paper3, 1, 2, "paper", false);
 	paper3.addEventListener('click', function () { itemTxt("paper3") });
 
 	var knife = new lib.item();
-	item_summon(knife, 1, 6, "knife", true);
+	item_summon(knife, 1, 6, "knife", false);
 	knife.addEventListener('click', function () { itemTxt("knife") });
 	var jimmy_bar = new lib.item();
-	item_summon(jimmy_bar, 2, 6, "jimmy_bar", true);
+	item_summon(jimmy_bar, 2, 6, "jimmy_bar", false);
 	jimmy_bar.addEventListener('click', function () { itemTxt("jimmy_bar") });
-
-	console.log(library_key)
-
-	//item
 
 	//events
 	let library_ghost = true;
@@ -184,22 +184,30 @@ function handleComplete(evt, comp) {
 			layer2[107] = "black_wool"; layer2[201] = "spruce_planks"; layer2[202] = "bookshelf"; layer2[206] = "cobweb"; layer2[211] = "cobweb"; layer2[303] = "cobweb"; layer2[305] = "cobweb"; layer2[309] = "cobweb"; layer2[603] = "cobweb"; layer2[607] = "cobweb"; layer2[703] = "cobweb"; layer2[705] = "cobweb"; layer2[809] = "cobweb"; layer2[811] = "cobweb"; layer2[911] = "cobweb"; layer2[1009] = "cobweb"; layer2[1011] = "cobweb"; layer2[1103] = "cobweb"; layer2[1110] = "cobweb"; layer2[1111] = "cobweb";
 			events[1207] = { "map": 5, "x": 2, "y": 7 };
 			events[202] = { "map": 7, "x": 2, "y": 3, "way": "down" };
+			if(library_key.visible) events[107] = { "map": 8, "x": 12, "y": 6 };
 		} else if (map === 7) {
 			blocks[101] = "bookshelf"; blocks[102] = "bookshelf"; blocks[103] = "bookshelf"; blocks[104] = "bookshelf"; blocks[105] = "bookshelf"; blocks[106] = "bookshelf"; blocks[107] = "bookshelf"; blocks[108] = "bookshelf"; blocks[109] = "bookshelf"; blocks[110] = "bookshelf"; blocks[111] = "bookshelf"; blocks[112] = "bookshelf"; blocks[201] = "ladder"; blocks[212] = "bookshelf"; blocks[301] = "bookshelf"; blocks[303] = "piston"; blocks[304] = "piston"; blocks[305] = "piston"; blocks[306] = "piston"; blocks[307] = "piston"; blocks[308] = "piston"; blocks[309] = "piston"; blocks[310] = "piston"; blocks[312] = "bookshelf"; blocks[401] = "bookshelf"; blocks[403] = "piston"; blocks[404] = "bookshelf"; blocks[406] = "bookshelf"; blocks[408] = "bookshelf"; blocks[410] = "piston"; blocks[412] = "bookshelf"; blocks[501] = "bookshelf"; blocks[503] = "piston"; blocks[504] = "bookshelf"; blocks[506] = "bookshelf"; blocks[508] = "bookshelf"; blocks[510] = "piston"; blocks[512] = "bookshelf"; blocks[601] = "bookshelf"; blocks[603] = "piston"; blocks[604] = "bookshelf"; blocks[606] = "bookshelf"; blocks[607] = "cobweb"; blocks[608] = "bookshelf"; blocks[610] = "piston"; blocks[612] = "bookshelf"; blocks[701] = "bookshelf"; blocks[703] = "piston"; blocks[704] = "bookshelf"; blocks[705] = "cobweb"; blocks[706] = "bookshelf"; blocks[708] = "bookshelf"; blocks[710] = "piston"; blocks[712] = "bookshelf"; blocks[801] = "bookshelf"; blocks[803] = "piston"; blocks[804] = "bookshelf"; blocks[806] = "bookshelf"; blocks[808] = "bookshelf"; blocks[809] = "cobweb"; blocks[810] = "piston"; blocks[812] = "bookshelf"; blocks[901] = "bookshelf"; blocks[903] = "piston"; blocks[904] = "bookshelf"; blocks[906] = "bookshelf"; blocks[908] = "bookshelf"; blocks[910] = "piston"; blocks[912] = "bookshelf"; blocks[1001] = "bookshelf"; blocks[1003] = "piston"; blocks[1004] = "piston"; blocks[1005] = "piston"; blocks[1006] = "piston"; blocks[1007] = "piston"; blocks[1008] = "piston"; blocks[1009] = "piston"; blocks[1010] = "piston"; blocks[1012] = "bookshelf"; blocks[1101] = "bookshelf"; blocks[1112] = "bookshelf"; blocks[1201] = "bookshelf"; blocks[1202] = "bookshelf"; blocks[1203] = "bookshelf"; blocks[1204] = "bookshelf"; blocks[1205] = "bookshelf"; blocks[1206] = "enchanting_table"; blocks[1207] = "bookshelf"; blocks[1208] = "bookshelf"; blocks[1209] = "bookshelf"; blocks[1210] = "bookshelf"; blocks[1211] = "bookshelf"; blocks[1212] = "bookshelf";
 			floor("oak_planks");
 			layer2[201] = "spruce_planks"; layer2[405] = "spruce_planks"; layer2[407] = "spruce_planks"; layer2[409] = "spruce_planks"; layer2[505] = "spruce_planks"; layer2[507] = "spruce_planks"; layer2[509] = "spruce_planks"; layer2[605] = "spruce_planks"; layer2[607] = "spruce_planks"; layer2[609] = "spruce_planks"; layer2[705] = "spruce_planks"; layer2[707] = "spruce_planks"; layer2[709] = "spruce_planks"; layer2[805] = "spruce_planks"; layer2[807] = "spruce_planks"; layer2[809] = "spruce_planks"; layer2[905] = "spruce_planks"; layer2[907] = "spruce_planks"; layer2[909] = "spruce_planks";
 			events[201] = { "map": 6, "x": 2, "y": 3, "way": "down" };
-			events[1207] = { "item": library_key };
+			if(!library_key.visible) events[1206] = { "item": library_key, "itemName": "library_key" };
 		} else if (map === 8) {
-			blocks[101] = "bookshelf"; blocks[102] = "bookshelf"; blocks[103] = "bookshelf"; blocks[104] = "bookshelf"; blocks[105] = "bookshelf"; blocks[106] = "bookshelf"; blocks[107] = "bookshelf"; blocks[108] = "bookshelf"; blocks[109] = "bookshelf"; blocks[110] = "bookshelf"; blocks[111] = "bookshelf"; blocks[112] = "bookshelf"; blocks[201] = "ladder"; blocks[212] = "bookshelf"; blocks[301] = "bookshelf"; blocks[303] = "piston"; blocks[304] = "piston"; blocks[305] = "piston"; blocks[306] = "piston"; blocks[307] = "piston"; blocks[308] = "piston"; blocks[309] = "piston"; blocks[310] = "piston"; blocks[312] = "bookshelf"; blocks[401] = "bookshelf"; blocks[403] = "piston"; blocks[404] = "bookshelf"; blocks[406] = "bookshelf"; blocks[408] = "bookshelf"; blocks[410] = "piston"; blocks[412] = "bookshelf"; blocks[501] = "bookshelf"; blocks[503] = "piston"; blocks[504] = "bookshelf"; blocks[506] = "bookshelf"; blocks[508] = "bookshelf"; blocks[510] = "piston"; blocks[512] = "bookshelf"; blocks[601] = "bookshelf"; blocks[603] = "piston"; blocks[604] = "bookshelf"; blocks[606] = "bookshelf"; blocks[607] = "cobweb"; blocks[608] = "bookshelf"; blocks[610] = "piston"; blocks[612] = "bookshelf"; blocks[701] = "bookshelf"; blocks[703] = "piston"; blocks[704] = "bookshelf"; blocks[705] = "cobweb"; blocks[706] = "bookshelf"; blocks[708] = "bookshelf"; blocks[710] = "piston"; blocks[712] = "bookshelf"; blocks[801] = "bookshelf"; blocks[803] = "piston"; blocks[804] = "bookshelf"; blocks[806] = "bookshelf"; blocks[808] = "bookshelf"; blocks[809] = "cobweb"; blocks[810] = "piston"; blocks[812] = "bookshelf"; blocks[901] = "bookshelf"; blocks[903] = "piston"; blocks[904] = "bookshelf"; blocks[906] = "bookshelf"; blocks[908] = "bookshelf"; blocks[910] = "piston"; blocks[912] = "bookshelf"; blocks[1001] = "bookshelf"; blocks[1003] = "piston"; blocks[1004] = "piston"; blocks[1005] = "piston"; blocks[1006] = "piston"; blocks[1007] = "piston"; blocks[1008] = "piston"; blocks[1009] = "piston"; blocks[1010] = "piston"; blocks[1012] = "bookshelf"; blocks[1101] = "bookshelf"; blocks[1112] = "bookshelf"; blocks[1201] = "bookshelf"; blocks[1202] = "bookshelf"; blocks[1203] = "bookshelf"; blocks[1204] = "bookshelf"; blocks[1205] = "bookshelf"; blocks[1206] = "enchanting_table"; blocks[1207] = "bookshelf"; blocks[1208] = "bookshelf"; blocks[1209] = "bookshelf"; blocks[1210] = "bookshelf"; blocks[1211] = "bookshelf"; blocks[1212] = "bookshelf";
-			floor("oak_planks");
-			layer2[201] = "spruce_planks"; layer2[405] = "spruce_planks"; layer2[407] = "spruce_planks"; layer2[409] = "spruce_planks"; layer2[505] = "spruce_planks"; layer2[507] = "spruce_planks"; layer2[509] = "spruce_planks"; layer2[605] = "spruce_planks"; layer2[607] = "spruce_planks"; layer2[609] = "spruce_planks"; layer2[705] = "spruce_planks"; layer2[707] = "spruce_planks"; layer2[709] = "spruce_planks"; layer2[805] = "spruce_planks"; layer2[807] = "spruce_planks"; layer2[809] = "spruce_planks"; layer2[905] = "spruce_planks"; layer2[907] = "spruce_planks"; layer2[909] = "spruce_planks";
-			events[201] = { "map": 6, "x": 2, "y": 4 };
+			blocks[103]="nether_bricks";blocks[104]="nether_bricks";blocks[105]="spawner";blocks[107]="spawner";blocks[108]="nether_bricks";blocks[109]="nether_bricks";blocks[203]="nether_bricks";blocks[204]="nether_bricks";blocks[205]="spawner";blocks[207]="spawner";blocks[208]="nether_bricks";blocks[209]="nether_bricks";blocks[303]="nether_bricks";blocks[304]="nether_bricks";blocks[305]="spawner";blocks[307]="spawner";blocks[308]="nether_bricks";blocks[309]="nether_bricks";blocks[403]="nether_bricks";blocks[404]="nether_bricks";blocks[405]="spawner";blocks[407]="spawner";blocks[408]="nether_bricks";blocks[409]="nether_bricks";blocks[503]="nether_bricks";blocks[504]="nether_bricks";blocks[505]="spawner";blocks[507]="spawner";blocks[508]="nether_bricks";blocks[509]="nether_bricks";blocks[603]="nether_bricks";blocks[604]="nether_bricks";blocks[605]="spawner";blocks[607]="spawner";blocks[608]="nether_bricks";blocks[609]="nether_bricks";blocks[703]="nether_bricks";blocks[704]="nether_bricks";blocks[705]="spawner";blocks[707]="spawner";blocks[708]="nether_bricks";blocks[709]="nether_bricks";blocks[803]="nether_bricks";blocks[804]="nether_bricks";blocks[805]="spawner";blocks[807]="spawner";blocks[808]="nether_bricks";blocks[809]="nether_bricks";blocks[903]="nether_bricks";blocks[904]="nether_bricks";blocks[905]="spawner";blocks[907]="spawner";blocks[908]="nether_bricks";blocks[909]="nether_bricks";blocks[1003]="nether_bricks";blocks[1004]="nether_bricks";blocks[1005]="spawner";blocks[1007]="spawner";blocks[1008]="nether_bricks";blocks[1009]="nether_bricks";blocks[1101]="nether_bricks";blocks[1102]="nether_bricks";blocks[1103]="nether_bricks";blocks[1104]="nether_bricks";blocks[1105]="spawner";blocks[1107]="spawner";blocks[1108]="nether_bricks";blocks[1109]="nether_bricks";blocks[1110]="nether_bricks";blocks[1111]="nether_bricks";blocks[1112]="nether_bricks";blocks[1201]="nether_bricks";blocks[1202]="nether_bricks";blocks[1203]="nether_bricks";blocks[1204]="nether_bricks";blocks[1205]="nether_bricks";blocks[1207]="nether_bricks";blocks[1208]="nether_bricks";blocks[1209]="nether_bricks";blocks[1210]="nether_bricks";blocks[1211]="nether_bricks";blocks[1212]="nether_bricks";
+			floor("spruce_planks");
+			events[1306] = { "map": 9, "x": 2, "y": 7 };
 		} else if (map === 9) {
-			blocks[101] = "dark_oak_planks"; blocks[102] = "dark_oak_planks"; blocks[103] = "dark_oak_planks"; blocks[104] = "dark_oak_planks"; blocks[105] = "dark_oak_planks"; blocks[106] = "dark_oak_planks"; blocks[107] = "iron_door"; blocks[108] = "dark_oak_planks"; blocks[109] = "dark_oak_planks"; blocks[110] = "dark_oak_planks"; blocks[111] = "dark_oak_planks"; blocks[112] = "dark_oak_planks"; blocks[201] = "ladder"; blocks[202] = "ladder"; blocks[206] = "cobweb"; blocks[210] = "bookshelf2"; blocks[211] = "dark_oak_planks"; blocks[212] = "dark_oak_planks"; blocks[301] = "dark_oak_planks"; blocks[302] = "bookshelf2"; blocks[303] = "cobweb"; blocks[304] = "bookshelf2"; blocks[305] = "cobweb"; blocks[306] = "bookshelf2"; blocks[308] = "bookshelf2"; blocks[309] = "cobweb"; blocks[310] = "bookshelf2"; blocks[311] = "dark_oak_planks"; blocks[312] = "dark_oak_planks"; blocks[401] = "dark_oak_planks"; blocks[402] = "bookshelf2"; blocks[404] = "bookshelf2"; blocks[406] = "bookshelf2"; blocks[408] = "bookshelf2"; blocks[410] = "bookshelf2"; blocks[411] = "dark_oak_planks"; blocks[412] = "dark_oak_planks"; blocks[501] = "dark_oak_planks"; blocks[502] = "bookshelf2"; blocks[504] = "bookshelf2"; blocks[506] = "bookshelf2"; blocks[508] = "bookshelf2"; blocks[510] = "bookshelf2"; blocks[511] = "dark_oak_planks"; blocks[512] = "dark_oak_planks"; blocks[601] = "dark_oak_planks"; blocks[602] = "bookshelf2"; blocks[603] = "cobweb"; blocks[604] = "bookshelf2"; blocks[605] = "cobweb"; blocks[606] = "bookshelf2"; blocks[608] = "bookshelf2"; blocks[610] = "bookshelf2"; blocks[611] = "dark_oak_planks"; blocks[612] = "dark_oak_planks"; blocks[701] = "dark_oak_planks"; blocks[702] = "bookshelf2"; blocks[703] = "cobweb"; blocks[704] = "bookshelf2"; blocks[706] = "bookshelf2"; blocks[708] = "bookshelf2"; blocks[710] = "bookshelf2"; blocks[711] = "dark_oak_planks"; blocks[712] = "dark_oak_planks"; blocks[801] = "dark_oak_planks"; blocks[802] = "bookshelf2"; blocks[804] = "bookshelf2"; blocks[806] = "bookshelf2"; blocks[808] = "bookshelf2"; blocks[809] = "cobweb"; blocks[810] = "bookshelf2"; blocks[811] = "dark_oak_planks"; blocks[812] = "dark_oak_planks"; blocks[901] = "dark_oak_planks"; blocks[902] = "bookshelf2"; blocks[904] = "bookshelf2"; blocks[906] = "bookshelf2"; blocks[908] = "bookshelf2"; blocks[910] = "bookshelf2"; blocks[911] = "dark_oak_planks"; blocks[912] = "dark_oak_planks"; blocks[1001] = "dark_oak_planks"; blocks[1002] = "bookshelf2"; blocks[1004] = "bookshelf2"; blocks[1006] = "bookshelf2"; blocks[1008] = "bookshelf2"; blocks[1009] = "cobweb"; blocks[1010] = "bookshelf2"; blocks[1011] = "dark_oak_planks"; blocks[1012] = "dark_oak_planks"; blocks[1101] = "dark_oak_planks"; blocks[1102] = "bookshelf2"; blocks[1103] = "cobweb"; blocks[1110] = "bookshelf2"; blocks[1111] = "dark_oak_planks"; blocks[1112] = "dark_oak_planks"; blocks[1201] = "dark_oak_planks"; blocks[1202] = "dark_oak_planks"; blocks[1203] = "dark_oak_planks"; blocks[1204] = "dark_oak_planks"; blocks[1205] = "dark_oak_planks"; blocks[1206] = "dark_oak_planks"; blocks[1207] = "oak_door"; blocks[1208] = "dark_oak_planks"; blocks[1209] = "dark_oak_planks"; blocks[1210] = "dark_oak_planks"; blocks[1211] = "dark_oak_planks"; blocks[1212] = "dark_oak_planks";
-			floor("oak_planks");
-			layer2[201] = "spruce_planks"; layer2[405] = "spruce_planks"; layer2[407] = "spruce_planks"; layer2[409] = "spruce_planks"; layer2[505] = "spruce_planks"; layer2[507] = "spruce_planks"; layer2[509] = "spruce_planks"; layer2[605] = "spruce_planks"; layer2[607] = "spruce_planks"; layer2[609] = "spruce_planks"; layer2[705] = "spruce_planks"; layer2[707] = "spruce_planks"; layer2[709] = "spruce_planks"; layer2[805] = "spruce_planks"; layer2[807] = "spruce_planks"; layer2[809] = "spruce_planks"; layer2[905] = "spruce_planks"; layer2[907] = "spruce_planks"; layer2[909] = "spruce_planks";
-			events[201] = { "map": 6, "x": 2, "y": 4 };
+			blocks[101]="dark_oak_planks";blocks[102]="dark_oak_planks";blocks[103]="dark_oak_planks";blocks[104]="dark_oak_planks";blocks[105]="dark_oak_planks";blocks[106]="dark_oak_planks";blocks[107]="iron_door";blocks[108]="dark_oak_planks";blocks[109]="dark_oak_planks";blocks[110]="dark_oak_planks";blocks[111]="dark_oak_planks";blocks[112]="dark_oak_planks";blocks[201]="dark_oak_planks";blocks[202]="bookshelf2";blocks[210]="bookshelf2";blocks[211]="dark_oak_planks";blocks[212]="dark_oak_planks";blocks[301]="dark_oak_planks";blocks[302]="bookshelf2";blocks[304]="bookshelf2";blocks[306]="bookshelf2";blocks[308]="bookshelf2";blocks[310]="bookshelf2";blocks[311]="dark_oak_planks";blocks[312]="dark_oak_planks";blocks[401]="dark_oak_planks";blocks[402]="bookshelf2";blocks[404]="bookshelf2";blocks[406]="bookshelf2";blocks[408]="bookshelf2";blocks[410]="bookshelf2";blocks[411]="dark_oak_planks";blocks[412]="dark_oak_planks";blocks[501]="dark_oak_planks";blocks[502]="bookshelf2";blocks[504]="bookshelf2";blocks[506]="bookshelf2";blocks[508]="bookshelf2";blocks[510]="bookshelf2";blocks[511]="dark_oak_planks";blocks[512]="dark_oak_planks";blocks[601]="dark_oak_planks";blocks[602]="bookshelf2";blocks[604]="bookshelf2";blocks[606]="bookshelf2";blocks[608]="bookshelf2";blocks[610]="bookshelf2";blocks[611]="dark_oak_planks";blocks[612]="dark_oak_planks";blocks[701]="dark_oak_planks";blocks[702]="bookshelf2";blocks[704]="bookshelf2";blocks[706]="bookshelf2";blocks[708]="bookshelf2";blocks[710]="bookshelf2";blocks[711]="dark_oak_planks";blocks[712]="dark_oak_planks";blocks[801]="dark_oak_planks";blocks[802]="bookshelf2";blocks[804]="bookshelf2";blocks[806]="bookshelf2";blocks[808]="bookshelf2";blocks[810]="bookshelf2";blocks[811]="dark_oak_planks";blocks[812]="dark_oak_planks";blocks[901]="dark_oak_planks";blocks[902]="bookshelf2";blocks[904]="bookshelf2";blocks[906]="bookshelf2";blocks[908]="bookshelf2";blocks[910]="bookshelf2";blocks[911]="dark_oak_planks";blocks[912]="dark_oak_planks";blocks[1001]="dark_oak_planks";blocks[1002]="bookshelf2";blocks[1004]="bookshelf2";blocks[1006]="bookshelf2";blocks[1008]="bookshelf2";blocks[1010]="bookshelf2";blocks[1011]="dark_oak_planks";blocks[1012]="dark_oak_planks";blocks[1101]="dark_oak_planks";blocks[1102]="bookshelf2";blocks[1110]="bookshelf2";blocks[1111]="dark_oak_planks";blocks[1112]="dark_oak_planks";blocks[1201]="dark_oak_planks";blocks[1202]="dark_oak_planks";blocks[1203]="dark_oak_planks";blocks[1204]="dark_oak_planks";blocks[1205]="dark_oak_planks";blocks[1206]="dark_oak_planks";blocks[1207]="oak_door";blocks[1208]="dark_oak_planks";blocks[1209]="dark_oak_planks";blocks[1210]="dark_oak_planks";blocks[1211]="dark_oak_planks";blocks[1212]="dark_oak_planks";
+			floor("spruce_planks");
+			events[1207] = { "map": 10, "x": 7, "y": 4 };
+		} else if (map === 10) {
+			blocks[102]="oak_planks";blocks[103]="oak_planks";blocks[104]="oak_planks";blocks[105]="oak_planks";blocks[106]="oak_planks";blocks[107]="oak_planks";blocks[108]="oak_planks";blocks[109]="spruce_planks";blocks[110]="spruce_planks";blocks[111]="cartography_table";blocks[112]="prismarine_bricks";blocks[202]="oak_planks";blocks[203]="oak_planks";blocks[204]="oak_planks";blocks[205]="oak_planks";blocks[206]="oak_planks";blocks[207]="oak_planks";blocks[208]="oak_planks";blocks[209]="spruce_planks";blocks[210]="spruce_planks";blocks[212]="prismarine_bricks";blocks[302]="oak_planks";blocks[303]="oak_planks";blocks[304]="oak_planks";blocks[305]="oak_planks";blocks[306]="oak_planks";blocks[307]="oak_planks";blocks[308]="oak_planks";blocks[309]="spruce_planks";blocks[310]="spruce_planks";blocks[312]="prismarine_bricks";blocks[402]="oak_planks";blocks[403]="oak_planks";blocks[404]="oak_planks";blocks[405]="oak_planks";blocks[406]="oak_planks";blocks[407]="oak_planks";blocks[408]="oak_planks";blocks[409]="spruce_planks";blocks[410]="spruce_planks";blocks[412]="prismarine_bricks";blocks[502]="oak_planks";blocks[503]="oak_planks";blocks[504]="oak_planks";blocks[505]="oak_planks";blocks[506]="oak_planks";blocks[507]="oak_planks";blocks[508]="oak_planks";blocks[509]="spruce_planks";blocks[510]="spruce_planks";blocks[512]="prismarine_bricks";blocks[602]="oak_planks";blocks[603]="oak_planks";blocks[604]="oak_door";blocks[605]="oak_planks";blocks[606]="oak_planks";blocks[607]="oak_planks";blocks[608]="oak_planks";blocks[609]="spruce_planks";blocks[610]="spruce_planks";blocks[612]="prismarine_bricks";blocks[712]="prismarine_bricks";blocks[812]="prismarine_bricks";blocks[911]="prismarine_bricks";blocks[912]="sugar_cane";blocks[1001]="prismarine_bricks";blocks[1006]="prismarine_bricks";blocks[1007]="prismarine_bricks";blocks[1008]="prismarine_bricks";blocks[1009]="prismarine_bricks";blocks[1010]="prismarine_bricks";blocks[1011]="sugar_cane";blocks[1012]="sugar_cane";blocks[1101]="sugar_cane";blocks[1102]="prismarine_bricks";blocks[1103]="iron_bars";blocks[1104]="iron_bars";blocks[1105]="prismarine_bricks";blocks[1106]="sugar_cane";blocks[1107]="sugar_cane";blocks[1108]="sugar_cane";blocks[1109]="sugar_cane";blocks[1110]="sugar_cane";blocks[1111]="sugar_cane";blocks[1112]="sugar_cane";blocks[1201]="sugar_cane";blocks[1202]="prismarine_bricks";blocks[1205]="prismarine_bricks";blocks[1206]="sugar_cane";blocks[1207]="sugar_cane";blocks[1208]="sugar_cane";blocks[1209]="sugar_cane";blocks[1210]="sugar_cane";blocks[1211]="sugar_cane";blocks[1212]="sugar_cane";
+			floor("dirt");
+			events[604] = { "map": 5, "x": 11, "y": 7 };
+		}
+		if(map===8){
+			frontOf(monster);
+		}else{
+			monster.visible=false;
 		}
 	}
 
@@ -213,6 +221,7 @@ function handleComplete(evt, comp) {
 		if (map === 7) return title.text = "圖書館2樓";
 		if (map === 8) return title.text = "圖書館";
 		if (map === 9) return title.text = "圖書館";
+		if (map === 10) return title.text = "圖書館";
 	}
 
 	function wall(pos) {
@@ -230,15 +239,18 @@ function handleComplete(evt, comp) {
 		if (direction === "right") target = pos + 100;
 		if (events[target] === 0) {
 			autoChat(blocks[target]);
+			if (map===8 && player1_x === 7) return monsterMove();
 		} else {
 			let omap = events[target].map;
 			let ox = events[target].x;
 			let oy = events[target].y;
 			let oway = events[target].way
 			let oitem = events[target].item;
+			let oitemName = events[target].itemName;
 			if (blocks[target] === "oak_door") return transport(omap, ox, oy, oway);
 			if (blocks[target] === "ladder") return transport(omap, ox, oy, oway);
-			if (blocks[target] === "enchanting_table") return item(oitem);
+			if (blocks[target] === "iron_door") return transport(omap, ox, oy, oway);
+			if (blocks[target] === "enchanting_table") return item(oitem,oitemName);
 			if (target % 100 === 13 || target % 100 === 0) return transport(omap, ox, oy, oway);
 			if (parseInt(target / 100) === 13 || parseInt(target / 100) === 0) return transport(omap, ox, oy, oway);
 		}
@@ -272,7 +284,7 @@ function handleComplete(evt, comp) {
 		if (type === "end_portal_frame") return autoChatData("雕琢過的桌子", "桌上沒有東西", 0, 0);
 	}
 
-	function itemTxt(type){
+	function itemTxt(type) {
 		if (type === "library_key") return autoChatData("圖書館鑰匙", "可以開啟圖書館一樓鐵門", 0, 0);
 		if (type === "cd") return autoChatData("唱片", "可以在唱片機播放", 0, 0);
 		if (type === "paper1") return autoChatData("日記", "日記", 0, 0);
@@ -299,7 +311,13 @@ function handleComplete(evt, comp) {
 
 
 	//固定函數模板------------------------------------------------------
-
+	function monsterMove(){
+		monster.x+=5;
+		if(monster.visible && robot.x<monster.x+250) p1die = true;
+		die_detect();
+		if(map!=10) setTimeout((()=>monsterMove()),100);
+		if(map===10 || p1die) return monster.visible=false;
+	}
 	//手機版-控制
 	function touchdownMove(e) {
 		location = (player1_x) * 100 + (player1_y);
@@ -362,7 +380,7 @@ function handleComplete(evt, comp) {
 				block[i * 100 + j].gotoAndPlay(blocks[i * 100 + j]);
 			}
 		}
-		exportRoot.setChildIndex(robot, exportRoot.getNumChildren() - 1)
+		frontOf(robot);
 		chat_off();
 	}
 	//改變地圖底部樣式
@@ -373,16 +391,22 @@ function handleComplete(evt, comp) {
 			}
 		}
 	}
+	function frontOf(object){
+		exportRoot.setChildIndex(object, exportRoot.getNumChildren() - 1)
+		object.visible = true;
+	}
 	//傳送
 	function transport(maps, x, y, way) {
 		map = maps;
-		player1_x = x
-		player1_y = y
+		if(map===9) frontOf(monster);
+		if(map===9) monster.x=-350;
+		player1_x = x;
+		player1_y = y;
 		robot.x = player1_x * 50 - 25;
 		robot.y = player1_y * 50 - 25;
 		location = (player1_x) * 100 + (player1_y);
 		if (way) direction = way;
-		mapChangeFn()
+		mapChangeFn();
 		titleChangeFn();
 	}
 	//方塊自動對話
@@ -395,8 +419,9 @@ function handleComplete(evt, comp) {
 		chat_on();
 	}
 	//得到物品
-	function item(items) {
-		items = item.visible = true;
+	function item(items,name) {
+		items.visible = true;
+		itemTxt(name)
 	}
 	//生成物件初始參數設定
 	function summon(object, x, y, gotoAndPlay, visible) {
@@ -431,16 +456,11 @@ function handleComplete(evt, comp) {
 	function chat_on() {
 		chatbar_status = true;
 
-		exportRoot.setChildIndex(chatbar, exportRoot.getNumChildren() - 1)
-		exportRoot.setChildIndex(speakers, exportRoot.getNumChildren() - 1)
-		exportRoot.setChildIndex(line1, exportRoot.getNumChildren() - 1)
-		exportRoot.setChildIndex(line2, exportRoot.getNumChildren() - 1)
-		exportRoot.setChildIndex(line3, exportRoot.getNumChildren() - 1)
-		chatbar.visible = true;
-		speakers.visible = true;
-		line1.visible = true;
-		line2.visible = true;
-		line3.visible = true;
+		frontOf(chatbar);
+		frontOf(speakers);
+		frontOf(line1);
+		frontOf(line2);
+		frontOf(line3);
 		speakers.text = "<" + speaker + ">";
 		line1.text = line_1;
 		line2.text = line_2;
@@ -474,7 +494,7 @@ function handleComplete(evt, comp) {
 			player1_y += step / 50
 			robot.y += step;
 		}
-		exportRoot.setChildIndex(robot, exportRoot.getNumChildren() - 1)
+		frontOf(robot);
 	}
 	//死亡偵測
 	function die_detect() {
