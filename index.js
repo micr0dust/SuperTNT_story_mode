@@ -79,25 +79,31 @@ function handleComplete(evt, comp) {
 	summon(robot, player1_x * 50 - 25, player1_y * 50 - 25, direction, true);
 
 	var hitArea = new createjs.Shape();
-	hitArea.graphics.beginFill("#000").drawRect(0, 0, 50, 50);//這裡是圖片大小
+	hitArea.graphics.beginFill("#000").drawRect(0, 0, 50, 50);//items
+
 	//items
 	var library_key = new lib.item();
 	item_summon(library_key, 1, 1, "key", true);
-	library_key.addEventListener('click', function () { alert("我是鑰匙") })
+	library_key.addEventListener('click', function () { itemTxt("library_key") });
 	var cd = new lib.item();
 	item_summon(cd, 2, 1, "cd", true);
-	cd.addEventListener('click', function () { alert("我是CD") })
+	cd.addEventListener('click', function () { itemTxt("cd") });
 	var paper1 = new lib.item();
 	item_summon(paper1, 3, 1, "paper", true);
+	paper1.addEventListener('click', function () { itemTxt("paper1") });
 	var paper2 = new lib.item();
 	item_summon(paper2, 4, 1, "paper", true);
+	paper2.addEventListener('click', function () { itemTxt("paper2") });
 	var paper3 = new lib.item();
 	item_summon(paper3, 1, 2, "paper", true);
+	paper3.addEventListener('click', function () { itemTxt("paper3") });
 
 	var knife = new lib.item();
 	item_summon(knife, 1, 6, "knife", true);
-	var paper3 = new lib.item();
-	item_summon(paper3, 2, 6, "jimmy_bar", true);
+	knife.addEventListener('click', function () { itemTxt("knife") });
+	var jimmy_bar = new lib.item();
+	item_summon(jimmy_bar, 2, 6, "jimmy_bar", true);
+	jimmy_bar.addEventListener('click', function () { itemTxt("jimmy_bar") });
 
 	console.log(library_key)
 
@@ -264,6 +270,16 @@ function handleComplete(evt, comp) {
 		if (type === "barrel_open") return autoChatData("儲藏箱", "空空如也", 0, 0);
 		if (type === "scaffolding") return autoChatData("桌子", "桌上沒有東西", 0, 0);
 		if (type === "end_portal_frame") return autoChatData("雕琢過的桌子", "桌上沒有東西", 0, 0);
+	}
+
+	function itemTxt(type){
+		if (type === "library_key") return autoChatData("圖書館鑰匙", "可以開啟圖書館一樓鐵門", 0, 0);
+		if (type === "cd") return autoChatData("唱片", "可以在唱片機播放", 0, 0);
+		if (type === "paper1") return autoChatData("日記", "日記", 0, 0);
+		if (type === "paper2") return autoChatData("日記", "日記", 0, 0);
+		if (type === "paper3") return autoChatData("日記", "日記", 0, 0);
+		if (type === "knife") return autoChatData("匕首", "沾了點鮮血的匕首", 0, 0);
+		if (type === "jimmy_bar") return autoChatData("鐵橇", "可以破壞鐵欄杆", 0, 0);
 	}
 
 	function chat() {
