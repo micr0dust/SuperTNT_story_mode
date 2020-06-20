@@ -110,7 +110,7 @@ function handleComplete(evt, comp) {
 	jimmy_bar.addEventListener('click', function () { itemTxt("jimmy_bar") });
 
 	//events
-	let library_ghost = true;
+	let cd_played = false;
 
 	var title = new createjs.Text("鎮長辦公室", "bold 43px Arial", "white");
 	title.x = 614;
@@ -178,8 +178,11 @@ function handleComplete(evt, comp) {
 			layer2[107] = "black_wool"; layer2[409] = "pink_wool"; layer2[510] = "pink_wool"; layer2[511] = "pink_wool"; layer2[1009] = "light_blue_wool"; layer2[1110] = "light_blue_wool"; layer2[1111] = "light_blue_wool";
 			events[1207] = { "map": 4, "x": 7, "y": 4 };
 			events[107] = { "map": 6, "x": 11, "y": 7 };
+			if(!paper1.visible) events[402] = { "item": paper1, "itemName": "paper1" };
 		} else if (map === 6) {
-			blocks[101] = "spruce_planks"; blocks[102] = "spruce_planks"; blocks[103] = "spruce_planks"; blocks[104] = "spruce_planks"; blocks[105] = "spruce_planks"; blocks[106] = "spruce_planks"; blocks[107] = "iron_door"; blocks[108] = "spruce_planks"; blocks[109] = "spruce_planks"; blocks[110] = "spruce_planks"; blocks[111] = "spruce_planks"; blocks[112] = "spruce_planks"; blocks[201] = "ladder"; blocks[202] = "ladder"; blocks[210] = "bookshelf"; blocks[211] = "spruce_planks"; blocks[212] = "spruce_planks"; blocks[301] = "spruce_planks"; blocks[302] = "bookshelf"; blocks[304] = "bookshelf"; blocks[306] = "bookshelf"; blocks[308] = "bookshelf"; blocks[310] = "bookshelf"; blocks[311] = "spruce_planks"; blocks[312] = "spruce_planks"; blocks[401] = "spruce_planks"; blocks[402] = "bookshelf"; blocks[404] = "bookshelf"; blocks[406] = "bookshelf"; blocks[408] = "bookshelf"; blocks[410] = "bookshelf"; blocks[411] = "spruce_planks"; blocks[412] = "spruce_planks"; blocks[501] = "spruce_planks"; blocks[502] = "bookshelf"; blocks[504] = "bookshelf"; blocks[506] = "bookshelf"; blocks[508] = "bookshelf"; blocks[510] = "bookshelf"; blocks[511] = "spruce_planks"; blocks[512] = "spruce_planks"; blocks[601] = "spruce_planks"; blocks[602] = "bookshelf"; blocks[604] = "bookshelf"; blocks[606] = "bookshelf"; blocks[608] = "bookshelf"; blocks[610] = "bookshelf"; blocks[611] = "spruce_planks"; blocks[612] = "spruce_planks"; blocks[701] = "spruce_planks"; blocks[702] = "bookshelf"; blocks[704] = "bookshelf"; blocks[706] = "bookshelf"; blocks[708] = "bookshelf"; blocks[710] = "bookshelf"; blocks[711] = "spruce_planks"; blocks[712] = "spruce_planks"; blocks[801] = "spruce_planks"; blocks[802] = "bookshelf"; blocks[804] = "bookshelf"; blocks[806] = "bookshelf"; blocks[808] = "bookshelf"; blocks[810] = "bookshelf"; blocks[811] = "spruce_planks"; blocks[812] = "spruce_planks"; blocks[901] = "spruce_planks"; blocks[902] = "bookshelf"; blocks[904] = "bookshelf"; blocks[906] = "bookshelf"; blocks[908] = "bookshelf"; blocks[910] = "bookshelf"; blocks[911] = "spruce_planks"; blocks[912] = "spruce_planks"; blocks[1001] = "spruce_planks"; blocks[1002] = "bookshelf"; blocks[1004] = "bookshelf"; blocks[1006] = "bookshelf"; blocks[1008] = "bookshelf"; blocks[1010] = "bookshelf"; blocks[1011] = "spruce_planks"; blocks[1012] = "spruce_planks"; blocks[1101] = "spruce_planks"; blocks[1102] = "bookshelf"; blocks[1110] = "bookshelf"; blocks[1111] = "spruce_planks"; blocks[1112] = "spruce_planks"; blocks[1201] = "spruce_planks"; blocks[1202] = "spruce_planks"; blocks[1203] = "spruce_planks"; blocks[1204] = "spruce_planks"; blocks[1205] = "spruce_planks"; blocks[1206] = "spruce_planks"; blocks[1207] = "oak_door"; blocks[1208] = "spruce_planks"; blocks[1209] = "spruce_planks"; blocks[1210] = "spruce_planks"; blocks[1211] = "spruce_planks"; blocks[1212] = "spruce_planks";
+			blocks[101] = "spruce_planks"; blocks[102] = "spruce_planks"; blocks[103] = "spruce_planks"; blocks[104] = "spruce_planks"; blocks[105] = "spruce_planks"; blocks[106] = "spruce_planks"; blocks[108] = "spruce_planks"; blocks[109] = "spruce_planks"; blocks[110] = "spruce_planks"; blocks[111] = "spruce_planks"; blocks[112] = "spruce_planks"; blocks[201] = "ladder"; blocks[202] = "ladder"; blocks[210] = "bookshelf"; blocks[211] = "spruce_planks"; blocks[212] = "spruce_planks"; blocks[301] = "spruce_planks"; blocks[302] = "bookshelf"; blocks[304] = "bookshelf"; blocks[306] = "bookshelf"; blocks[308] = "bookshelf"; blocks[310] = "bookshelf"; blocks[311] = "spruce_planks"; blocks[312] = "spruce_planks"; blocks[401] = "spruce_planks"; blocks[402] = "bookshelf"; blocks[404] = "bookshelf"; blocks[406] = "bookshelf"; blocks[408] = "bookshelf"; blocks[410] = "bookshelf"; blocks[411] = "spruce_planks"; blocks[412] = "spruce_planks"; blocks[501] = "spruce_planks"; blocks[502] = "bookshelf"; blocks[504] = "bookshelf"; blocks[506] = "bookshelf"; blocks[508] = "bookshelf"; blocks[510] = "bookshelf"; blocks[511] = "spruce_planks"; blocks[512] = "spruce_planks"; blocks[601] = "spruce_planks"; blocks[602] = "bookshelf"; blocks[604] = "bookshelf"; blocks[606] = "bookshelf"; blocks[608] = "bookshelf"; blocks[610] = "bookshelf"; blocks[611] = "spruce_planks"; blocks[612] = "spruce_planks"; blocks[701] = "spruce_planks"; blocks[702] = "bookshelf"; blocks[704] = "bookshelf"; blocks[706] = "bookshelf"; blocks[708] = "bookshelf"; blocks[710] = "bookshelf"; blocks[711] = "spruce_planks"; blocks[712] = "spruce_planks"; blocks[801] = "spruce_planks"; blocks[802] = "bookshelf"; blocks[804] = "bookshelf"; blocks[806] = "bookshelf"; blocks[808] = "bookshelf"; blocks[810] = "bookshelf"; blocks[811] = "spruce_planks"; blocks[812] = "spruce_planks"; blocks[901] = "spruce_planks"; blocks[902] = "bookshelf"; blocks[904] = "bookshelf"; blocks[906] = "bookshelf"; blocks[908] = "bookshelf"; blocks[910] = "bookshelf"; blocks[911] = "spruce_planks"; blocks[912] = "spruce_planks"; blocks[1001] = "spruce_planks"; blocks[1002] = "bookshelf"; blocks[1004] = "bookshelf"; blocks[1006] = "bookshelf"; blocks[1008] = "bookshelf"; blocks[1010] = "bookshelf"; blocks[1011] = "spruce_planks"; blocks[1012] = "spruce_planks"; blocks[1101] = "spruce_planks"; blocks[1102] = "bookshelf"; blocks[1110] = "bookshelf"; blocks[1111] = "spruce_planks"; blocks[1112] = "spruce_planks"; blocks[1201] = "spruce_planks"; blocks[1202] = "spruce_planks"; blocks[1203] = "spruce_planks"; blocks[1204] = "spruce_planks"; blocks[1205] = "spruce_planks"; blocks[1206] = "spruce_planks"; blocks[1207] = "oak_door"; blocks[1208] = "spruce_planks"; blocks[1209] = "spruce_planks"; blocks[1210] = "spruce_planks"; blocks[1211] = "spruce_planks"; blocks[1212] = "spruce_planks";
+			if(!cd.visible) blocks[107] = "iron_door";
+			if(cd.visible) blocks[107] = "spruce_planks";
 			floor("oak_planks");
 			layer2[107] = "black_wool"; layer2[201] = "spruce_planks"; layer2[202] = "bookshelf"; layer2[206] = "cobweb"; layer2[211] = "cobweb"; layer2[303] = "cobweb"; layer2[305] = "cobweb"; layer2[309] = "cobweb"; layer2[603] = "cobweb"; layer2[607] = "cobweb"; layer2[703] = "cobweb"; layer2[705] = "cobweb"; layer2[809] = "cobweb"; layer2[811] = "cobweb"; layer2[911] = "cobweb"; layer2[1009] = "cobweb"; layer2[1011] = "cobweb"; layer2[1103] = "cobweb"; layer2[1110] = "cobweb"; layer2[1111] = "cobweb";
 			events[1207] = { "map": 5, "x": 2, "y": 7 };
@@ -202,7 +205,8 @@ function handleComplete(evt, comp) {
 		} else if (map === 10) {
 			blocks[102]="oak_planks";blocks[103]="oak_planks";blocks[104]="oak_planks";blocks[105]="oak_planks";blocks[106]="oak_planks";blocks[107]="oak_planks";blocks[108]="oak_planks";blocks[109]="spruce_planks";blocks[110]="spruce_planks";blocks[111]="cartography_table";blocks[112]="prismarine_bricks";blocks[202]="oak_planks";blocks[203]="oak_planks";blocks[204]="oak_planks";blocks[205]="oak_planks";blocks[206]="oak_planks";blocks[207]="oak_planks";blocks[208]="oak_planks";blocks[209]="spruce_planks";blocks[210]="spruce_planks";blocks[212]="prismarine_bricks";blocks[302]="oak_planks";blocks[303]="oak_planks";blocks[304]="oak_planks";blocks[305]="oak_planks";blocks[306]="oak_planks";blocks[307]="oak_planks";blocks[308]="oak_planks";blocks[309]="spruce_planks";blocks[310]="spruce_planks";blocks[312]="prismarine_bricks";blocks[402]="oak_planks";blocks[403]="oak_planks";blocks[404]="oak_planks";blocks[405]="oak_planks";blocks[406]="oak_planks";blocks[407]="oak_planks";blocks[408]="oak_planks";blocks[409]="spruce_planks";blocks[410]="spruce_planks";blocks[412]="prismarine_bricks";blocks[502]="oak_planks";blocks[503]="oak_planks";blocks[504]="oak_planks";blocks[505]="oak_planks";blocks[506]="oak_planks";blocks[507]="oak_planks";blocks[508]="oak_planks";blocks[509]="spruce_planks";blocks[510]="spruce_planks";blocks[512]="prismarine_bricks";blocks[602]="oak_planks";blocks[603]="oak_planks";blocks[604]="oak_door";blocks[605]="oak_planks";blocks[606]="oak_planks";blocks[607]="oak_planks";blocks[608]="oak_planks";blocks[609]="spruce_planks";blocks[610]="spruce_planks";blocks[612]="prismarine_bricks";blocks[712]="prismarine_bricks";blocks[812]="prismarine_bricks";blocks[911]="prismarine_bricks";blocks[912]="sugar_cane";blocks[1001]="prismarine_bricks";blocks[1006]="prismarine_bricks";blocks[1007]="prismarine_bricks";blocks[1008]="prismarine_bricks";blocks[1009]="prismarine_bricks";blocks[1010]="prismarine_bricks";blocks[1011]="sugar_cane";blocks[1012]="sugar_cane";blocks[1101]="sugar_cane";blocks[1102]="prismarine_bricks";blocks[1103]="iron_bars";blocks[1104]="iron_bars";blocks[1105]="prismarine_bricks";blocks[1106]="sugar_cane";blocks[1107]="sugar_cane";blocks[1108]="sugar_cane";blocks[1109]="sugar_cane";blocks[1110]="sugar_cane";blocks[1111]="sugar_cane";blocks[1112]="sugar_cane";blocks[1201]="sugar_cane";blocks[1202]="prismarine_bricks";blocks[1205]="prismarine_bricks";blocks[1206]="sugar_cane";blocks[1207]="sugar_cane";blocks[1208]="sugar_cane";blocks[1209]="sugar_cane";blocks[1210]="sugar_cane";blocks[1211]="sugar_cane";blocks[1212]="sugar_cane";
 			floor("dirt");
-			events[604] = { "map": 5, "x": 11, "y": 7 };
+			if(!cd.visible) events[111] = { "item": cd, "itemName": "cd" };
+			events[604] = { "map": 5, "x": 11, "y": 7};
 		}
 		if(map===8){
 			frontOf(monster);
@@ -251,6 +255,8 @@ function handleComplete(evt, comp) {
 			if (blocks[target] === "ladder") return transport(omap, ox, oy, oway);
 			if (blocks[target] === "iron_door") return transport(omap, ox, oy, oway);
 			if (blocks[target] === "enchanting_table") return item(oitem,oitemName);
+			if (blocks[target] === "cartography_table") return item(oitem,oitemName);
+			if (blocks[target] === "beehive") return item(oitem,oitemName);
 			if (target % 100 === 13 || target % 100 === 0) return transport(omap, ox, oy, oway);
 			if (parseInt(target / 100) === 13 || parseInt(target / 100) === 0) return transport(omap, ox, oy, oway);
 		}
@@ -287,7 +293,7 @@ function handleComplete(evt, comp) {
 	function itemTxt(type) {
 		if (type === "library_key") return autoChatData("圖書館鑰匙", "可以開啟圖書館一樓鐵門", 0, 0);
 		if (type === "cd") return autoChatData("唱片", "可以在唱片機播放", 0, 0);
-		if (type === "paper1") return autoChatData("日記", "日記", 0, 0);
+		if (type === "paper1") return autoChatData("日記 5/15", "最近愈來愈少人來了", "難道礦業沒落真的影響這麼大嗎?", 0);
 		if (type === "paper2") return autoChatData("日記", "日記", 0, 0);
 		if (type === "paper3") return autoChatData("日記", "日記", 0, 0);
 		if (type === "knife") return autoChatData("匕首", "沾了點鮮血的匕首", 0, 0);
@@ -311,7 +317,9 @@ function handleComplete(evt, comp) {
 
 
 	//固定函數模板------------------------------------------------------
+	//monster move
 	function monsterMove(){
+		frontOf(monster);
 		monster.x+=5;
 		if(monster.visible && robot.x<monster.x+250) p1die = true;
 		die_detect();
@@ -353,6 +361,7 @@ function handleComplete(evt, comp) {
 		} else if (e.keyCode === 191) {
 
 		}
+		console.log("("+player1_x+","+player1_y+")")
 	}
 	//改變地圖
 	function mapChangeFn() {
@@ -396,9 +405,9 @@ function handleComplete(evt, comp) {
 		object.visible = true;
 	}
 	//傳送
-	function transport(maps, x, y, way) {
+	function transport(maps, x, y, way, oif) {
+		if(map===10 && !cd.visible) return;
 		map = maps;
-		if(map===9) frontOf(monster);
 		if(map===9) monster.x=-350;
 		player1_x = x;
 		player1_y = y;
@@ -448,7 +457,10 @@ function handleComplete(evt, comp) {
 		direction = direct;
 		robot.gotoAndPlay(direction);
 		box(location)
-		if (player1_x === 1) return;
+		if (player1_x === 1 && direct==="left") return;
+		if (player1_x === 12 && direct==="right") return;
+		if (player1_y === 1 && direct==="up") return;
+		if (player1_y === 12 && direct==="down") return;
 		if (wall(walls)) return box(location);
 		moveFn();
 	}
@@ -502,8 +514,6 @@ function handleComplete(evt, comp) {
 		if (p1die) {
 			canplay = false;
 			robot.gotoAndPlay("explore");
-			document.getElementById("win").classList.remove("win");
-			document.getElementById("win").classList.add("p2win");
 			end_detect();
 			return;
 		}
