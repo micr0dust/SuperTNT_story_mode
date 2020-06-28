@@ -40,7 +40,7 @@ function handleComplete(evt, comp) {
 	let layer2 = [1213];
 	let bg1 = [];
 	let bg2 = [];
-	let events = [101213];
+	let events = [1213];
 	let block = [];
 	let map = 1;
 	let chats = 0;
@@ -54,6 +54,7 @@ function handleComplete(evt, comp) {
 	let choosing = false;
 	let fog_range = 2;
 	let fog_enable = false;
+	let reseting = false;
 
 	let chatbar = new lib.chat_bar();
 	summon(chatbar, 0, 430, "visible", false);
@@ -97,7 +98,6 @@ function handleComplete(evt, comp) {
 
 	//Player1
 	let direction = "down";
-	let p1die = false;
 	let udlr = true;
 	var robot = new lib.roboter();
 	var player1_x = 6;
@@ -157,9 +157,6 @@ function handleComplete(evt, comp) {
 	var paper7 = new lib.item();
 	item_summon(paper7, 1, 3, "paper", false);
 	paper7.addEventListener('click', function () { itemTxt("paper7", "paper") });
-
-
-
 	var knife = new lib.item();
 	item_summon(knife, 1, 6, "knife", false);
 	knife.addEventListener('click', function () { itemTxt("knife", "knife") });
@@ -180,11 +177,72 @@ function handleComplete(evt, comp) {
 	let cd_playing = false;
 	let chasing = false;
 	let sang = false;
-	let thunder1=false;
-	let thunder2=false;
-	let thunder3=false;
-	let wind=false;
+	let thunder1 = false;
+	let thunder2 = false;
+	let thunder3 = false;
+	let wind = false;
 	let diff = false;
+
+	function reset() {
+		reseting = true;
+		monster.x=-100;
+		monster.y=150;
+		monster.visible=false;
+		transport(1, 6, 5, "down");
+		chats=0;
+		chatbar_status = true;
+		choosing = false;
+		chat_off();
+		speaking = false;
+		canplay = true;
+		cd_played = false;
+		waiter_chat = false;
+		jumpscare1 = false;
+		woman_scream = false;
+		zombies = false;
+		jumpscare2 = false;
+		restaurant_cage.length = 0;
+		soul = 0;
+		uitem = false;
+		cd_playing = false;
+		chasing = false;
+		sang = false;
+		thunder1 = false;
+		thunder2 = false;
+		thunder3 = false;
+		wind = false;
+		diff = false;
+		library_key.visible = false;
+		cd.visible = false;
+		paper1.visible = false;
+		paper2.visible = false;
+		paper3.visible = false;
+		paper4.visible = false;
+		paper5.visible = false;
+		paper6.visible = false;
+		paper7.visible = false;
+		knife.visible = false;
+		jimmy_bar.visible = false;
+		reseting = false;
+	}
+
+	function half_reset(){
+		reseting = true;
+		monster.x=-100;
+		monster.y=150;
+		monster.visible=false;
+		transport(1, 6, 5, "down");
+		chats=0;
+		chatbar_status = true;
+		choosing = false;
+		chat_off();
+		speaking = false;
+		canplay = true;
+		chasing = false;
+		zombies = false;
+		diff = false;
+		reseting = false;
+	}
 
 	var title = new createjs.Text("鎮長辦公室", "bold 43px Arial", "white");
 	title.x = 614;
@@ -622,6 +680,7 @@ function handleComplete(evt, comp) {
 	}
 
 	function chat(line, uimg, item) {
+		if(reseting) return;
 		line_1 = "";
 		line_2 = "";
 		line_3 = "";
@@ -805,6 +864,8 @@ function handleComplete(evt, comp) {
 				line_1 = "[重新檢視結局]";
 				txtEvt2 = 5;
 				line_2 = "[重置遊戲]";
+				txtEvt3 = 4;
+				line_3 = "[保留目前進度重生]";
 			} else if (chats === 43) {
 				chats = 40;
 			}
@@ -819,6 +880,8 @@ function handleComplete(evt, comp) {
 				line_1 = "[重新檢視結局]";
 				txtEvt2 = 5;
 				line_2 = "[重置遊戲]";
+				txtEvt3 = 4;
+				line_3 = "[保留目前進度重生]";
 			} else if (chats === 13) {
 				chats = 10;
 			}
@@ -832,6 +895,8 @@ function handleComplete(evt, comp) {
 				line_1 = "[重新檢視結局]";
 				txtEvt2 = 5;
 				line_2 = "[重置遊戲]";
+				txtEvt3 = 4;
+				line_3 = "[保留目前進度重生]";
 			} else if (chats === 23) {
 				chats = 20;
 			}
@@ -857,6 +922,8 @@ function handleComplete(evt, comp) {
 				line_1 = "[重新檢視結局]";
 				txtEvt2 = 5;
 				line_2 = "[重置遊戲]";
+				txtEvt3 = 4;
+				line_3 = "[保留目前進度重生]";
 			} else if (chats === 39) {
 				chats = 30;
 			}
@@ -925,6 +992,8 @@ function handleComplete(evt, comp) {
 				line_1 = "[重新檢視結局]";
 				txtEvt2 = 5;
 				line_2 = "[重置遊戲]";
+				txtEvt3 = 4;
+				line_3 = "[保留目前進度重生]";
 			} else if (chats === 79) {
 				chats = 50;
 			}
@@ -1076,7 +1145,8 @@ function handleComplete(evt, comp) {
 				final_detect(4);
 			}), 400);
 		}
-		if (data === 5) window.location.reload(true);
+		if (data === 4) half_reset();
+		if (data === 5) reset();
 		if (data === 6) final_detect(4);
 		if (data === 7) final_detect(1);
 		if (data === 8) final_detect(2);
@@ -1099,6 +1169,7 @@ function handleComplete(evt, comp) {
 	}
 	//monster move
 	function monsterMove() {
+		if(map===1) return;
 		if (!chasing) {
 			createjs.Sound.play("chasing");
 		}
@@ -1106,14 +1177,17 @@ function handleComplete(evt, comp) {
 		if (map != 10) frontOf(monster);
 		fogs();
 		monster.x += 5;
-		if (monster.visible && robot.x < monster.x + 250) final_detect(4);
-		if (map != 10) setTimeout((() => monsterMove()), 100);
+		if (monster.visible && robot.x < monster.x + 250) {
+			final_detect(4);
+		}
+		if (map != 10 && map != 25) setTimeout((() => monsterMove()), 100);
 		if (map === 10 || map === 25) {
 			createjs.Sound.stop();
+			if(map===25) createjs.Sound.play("sud_3");
 			bgAudio = createjs.Sound.play("bgm", { loop: -1 });
 			bgAudio.volume = 0.3;
+			monster.visible = false;
 		}
-		if (map === 10 || map === 25) return monster.visible = false;
 	}
 	//手機版-控制
 	function touchdownMove(e) {
@@ -1380,15 +1454,6 @@ function handleComplete(evt, comp) {
 			chat(31);
 		} else if (end_type === 5) {
 			chat(51);
-		}
-	}
-	//結束偵測
-	function end_detect() {
-		if (!canplay) {
-			document.getElementById("reload_back").classList.remove("reload_back0");
-			document.getElementById("reload_back").classList.add("reload_back");
-			document.getElementById("reload").classList.remove("reload0");
-			document.getElementById("reload").classList.add("reload");
 		}
 	}
 
