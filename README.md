@@ -9,6 +9,6 @@
 ### 電腦版控制:
 上下左右
 
-demo: https://wuilliam104286.github.io/SuperTNT_story_mode/
+demo: https://micr0dust.github.io/SuperTNT_story_mode/
 
 ![](https://truth.bahamut.com.tw/s01/202006/75851b0fa90823dfe4ea71db4c0148fb.JPG?w=1000)
